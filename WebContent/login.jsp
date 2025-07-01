@@ -7,6 +7,19 @@
 <title>ログイン</title>
 </head>
 <body>
-<img></img>
+<img>システムアイコン</img>
+<form action=".action" method="post">
+	<div>
+		<label for="userid">ユーザーID</label>
+		<input id="userid" type="text" name="userid">
+	</div>
+	<div>
+		<label for="pass">パスワード</label>
+		<input id="pass" type="password" name="pass">
+	</div>
+	<div>
+		<input type="submit" value="ログイン">
+	</div>
+</form>
 </body>
 </html>
