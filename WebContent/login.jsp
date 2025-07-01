@@ -4,9 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>ログイン</title>
 </head>
 <body>
-
+<img>システムアイコン</img>
+<form action=".action" method="post">
+	<div>
+		<label for="userid">ユーザーID</label>
+		<input id="userid" type="text" name="userid">
+	</div>
+	<div>
+		<label for="pass">パスワード</label>
+		<input id="pass" type="password" name="pass">
+	</div>
+	<div>
+		<input type="submit" value="ログイン">
+	</div>
+</form>
 </body>
 </html>
