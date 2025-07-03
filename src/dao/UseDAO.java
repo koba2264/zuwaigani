@@ -35,6 +35,40 @@ public class UseDAO extends DAO {
 			user.setMeans(rs.getString("MEANS"));
 		}
 
+		ps.close();
+		con.close();
+
 		return user;
+	}
+
+//	新規登録用
+	public boolean SignUp(User user, String password) throws Exception {
+		boolean result = false;
+		Connection con = getConnection();
+		PreparedStatement ps = con.prepareStatement("INSERT INTO USER VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+		ps.setString(1, user.getId());
+		ps.setString(2, user.getName());
+		ps.setString(3, user.getNamef());
+		ps.setString(4, password);
+		ps.setString(5, user.getGenderId());
+		ps.setDate(6, user.getBirthDaySql());
+		ps.setInt(7, user.getAge());
+		ps.setString(8, user.getNumber());
+		ps.setString(9, user.getBlood());
+		ps.setString(10, user.getPhoto());
+		ps.setString(11, user.getAddress());
+		ps.setString(12, user.getRole());
+		ps.setString(13, user.getSos1());
+		ps.setString(14, user.getSos2());
+		ps.setBoolean(15, user.isSpouse());
+		ps.setString(16, user.getMeansId());
+		if (ps.executeUpdate() > 0) {
+			result = true;
+		}
+
+		ps.close();
+		con.close();
+
+		return result;
 	}
 }
