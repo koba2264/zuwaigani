@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>ログアウト</title>
 </head>
 <body>
+<img alt="" src="">
+<p>ログアウトしました</p>
+
+ <a href="login.jsp">ログイン画面へ戻る</a>
 
 </body>
 </html>
