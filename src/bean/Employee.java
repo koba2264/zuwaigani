@@ -15,27 +15,10 @@ public class Employee implements Serializable {
 	private String gender;
 	private String genderId;
 	private LocalDate birthDay;
-	private int age;
-	private String number;
-	private String blood;
-	private String photo;
-	private String address;
 	private String role;
-	private String sos1;
-	private String sos2 = "";
 	private boolean spouse;
-	private String means;
-	private String meansId;
 	private String job;
 	private String jobId;
-	private static Map<String, String> meansMap = new HashMap<String, String>(){
-		{
-			put("01","徒歩");
-			put("02","自転車");
-			put("03","電車");
-			put("04","自動車");
-		}
-	};
 	private static Map<String, String> genderMap = new HashMap<String, String>(){
 		{
 			put("01","男性");
@@ -73,39 +56,8 @@ public class Employee implements Serializable {
 		this.genderId = genderId;
 		this.gender = Employee.genderMap.get(genderId);
 	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public void setNumber(String number) {
-		this.number = number;
-	}
-	public void setBlood(String blood) {
-		this.blood = blood;
-	}
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
-	public void setSos1(String sos1) {
-		this.sos1 = sos1;
-	}
-	public void setSos2(String sos2) {
-		this.sos2 = sos2;
-	}
 	public void setSpouse(boolean spouse) {
 		this.spouse = spouse;
-	}
-	public void setMeans(String meansId) {
-		this.setMeansId(meansId);
-		this.means = Employee.meansMap.get(meansId);
-	}
-	private void setMeansId(String meansId) {
-		this.meansId = meansId;
 	}
 	public void setJob(String jobId) {
 		this.setJobId(jobId);
@@ -138,38 +90,11 @@ public class Employee implements Serializable {
 	public String getGender() {
 		return gender;
 	}
-	public int getAge() {
-		return age;
-	}
-	public String getNumber() {
-		return number;
-	}
-	public String getBlood() {
-		return blood;
-	}
-	public String getPhoto() {
-		return photo;
-	}
-	public String getAddress() {
-		return address;
-	}
 	public String getRole() {
 		return role;
 	}
-	public String getSos1() {
-		return sos1;
-	}
-	public String getSos2() {
-		return sos2;
-	}
 	public boolean isSpouse() {
 		return spouse;
-	}
-	public String getMeans() {
-		return means;
-	}
-	public String getMeansId() {
-		return meansId;
 	}
 	public String getJob() {
 		return job;
