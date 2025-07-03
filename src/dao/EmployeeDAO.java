@@ -4,20 +4,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import bean.User;
+import bean.Employee;
 
-public class UseDAO extends DAO {
+public class EmployeeDAO extends DAO {
 //	ログイン用
-	public User Login(String userId, String password) throws Exception {
+	public Employee Login(String userId, String password) throws Exception {
 		Connection con = getConnection();
-		PreparedStatement ps = con.prepareStatement("SELECT * FROM USER WHERE ID = ? AND PASSWORD = ?;");
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM EMPLOYEE WHERE ID = ? AND PASSWORD = ?;");
 		ps.setString(1, userId);
 		ps.setString(2, password);
 		ResultSet rs = ps.executeQuery();
 
-		User user = null;
+		Employee user = null;
 		if (rs.next()) {
-			user = new User();
+			user = new Employee();
 			user.setId(rs.getString("ID"));
 			user.setName(rs.getString("NAME"));
 			user.setNamef(rs.getString("NAMEF"));
@@ -42,10 +42,10 @@ public class UseDAO extends DAO {
 	}
 
 //	新規登録用
-	public boolean SignUp(User user, String password) throws Exception {
+	public boolean SignUp(Employee user, String password) throws Exception {
 		boolean result = false;
 		Connection con = getConnection();
-		PreparedStatement ps = con.prepareStatement("INSERT INTO USER VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+		PreparedStatement ps = con.prepareStatement("INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
 		ps.setString(1, user.getId());
 		ps.setString(2, user.getName());
 		ps.setString(3, user.getNamef());
