@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
-public class User implements Serializable {
+public class Employee implements Serializable {
 	private String id;
 	private String name;
 	private String namef;
@@ -61,7 +61,7 @@ public class User implements Serializable {
 	}
 	public void setGender(String genderId) {
 		this.genderId = genderId;
-		this.gender = User.genderMap.get(genderId);
+		this.gender = Employee.genderMap.get(genderId);
 	}
 	public void setAge(int age) {
 		this.age = age;
@@ -92,7 +92,7 @@ public class User implements Serializable {
 	}
 	public void setMeans(String meansId) {
 		this.setMeansId(meansId);
-		this.means = User.meansMap.get(meansId);
+		this.means = Employee.meansMap.get(meansId);
 	}
 	private void setMeansId(String meansId) {
 		this.meansId = meansId;
