@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>利用者情報追加</h1>
+<p>入力された利用者情報は既に登録されています</p>
+<div>
+	<input type="submit" value="戻る">
+</div>
 
 </body>
 </html>
