@@ -12,6 +12,7 @@ public class User implements Serializable {
 	private String name;
 	private String namef;
 	private String gender;
+	private String genderId;
 	private LocalDate birthDay;
 	private int age;
 	private String number;
@@ -30,6 +31,13 @@ public class User implements Serializable {
 			put("02","自転車");
 			put("03","電車");
 			put("04","自動車");
+		}
+	};
+	private static Map<String, String> genderMap = new HashMap<String, String>(){
+		{
+			put("01","男性");
+			put("02","女性");
+			put("03","無回答");
 		}
 	};
 
@@ -51,8 +59,9 @@ public class User implements Serializable {
 	public void setNamef(String namef) {
 		this.namef = namef;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setGender(String genderId) {
+		this.genderId = genderId;
+		this.gender = User.genderMap.get(genderId);
 	}
 	public void setAge(int age) {
 		this.age = age;
@@ -105,6 +114,9 @@ public class User implements Serializable {
 	}
 	public String getNamef() {
 		return namef;
+	}
+	public String getGenderId() {
+		return genderId;
 	}
 	public String getGender() {
 		return gender;
