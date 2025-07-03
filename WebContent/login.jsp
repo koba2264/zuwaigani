@@ -5,9 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ログイン</title>
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-<img>システムアイコン</img>
+<img src="image/koba.png" alt="koba" width="30%">
 <form action=".action" method="post">
 	<div>
 		<label for="userid">ユーザーID</label>
