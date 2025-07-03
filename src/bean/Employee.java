@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Employee implements Serializable {
+
 	private String id;
 	private String name;
 	private String namef;
@@ -25,6 +26,8 @@ public class Employee implements Serializable {
 	private boolean spouse;
 	private String means;
 	private String meansId;
+	private String job;
+	private String jobId;
 	private static Map<String, String> meansMap = new HashMap<String, String>(){
 		{
 			put("01","徒歩");
@@ -37,6 +40,13 @@ public class Employee implements Serializable {
 		{
 			put("01","男性");
 			put("02","女性");
+			put("03","無回答");
+		}
+	};
+	private static Map<String, String> jobMap = new HashMap<String, String>(){
+		{
+			put("01","看護師");
+			put("02","医者");
 			put("03","無回答");
 		}
 	};
@@ -97,6 +107,13 @@ public class Employee implements Serializable {
 	private void setMeansId(String meansId) {
 		this.meansId = meansId;
 	}
+	public void setJob(String jobId) {
+		this.setJobId(jobId);
+		this.job = Employee.jobMap.get(this.jobId);
+	}
+	private void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
 
 //	ゲッター
 	public String getId() {
@@ -153,5 +170,11 @@ public class Employee implements Serializable {
 	}
 	public String getMeansId() {
 		return meansId;
+	}
+	public String getJob() {
+		return job;
+	}
+	public String getJobId() {
+		return jobId;
 	}
 }
