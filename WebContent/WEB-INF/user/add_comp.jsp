@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>利用者情報追加</h1>
+<p>利用者情報の追加が完了しました</p>
+<div>
+	<input type="submit" value="メニューへ">
+</div>
 
 </body>
 </html>
