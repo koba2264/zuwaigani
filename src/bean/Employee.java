@@ -66,6 +66,9 @@ public class Employee implements Serializable {
 	private void setJobId(String jobId) {
 		this.jobId = jobId;
 	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 //	ゲッター
 	public String getId() {
