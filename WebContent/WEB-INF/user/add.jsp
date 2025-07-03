@@ -28,7 +28,7 @@
 		<label for="weman">女</label>
 	</div>
 	<div>
-		<span>血液型</span>
+		<label>血液型</label>
 		<span>必須</span>
 		<input id="man" type="radio" name="gender" value="man" required>
 		<label for="man">男</label>
@@ -60,7 +60,7 @@
 		<input id="sos2" type="tel" name="sos2" placeholder="000-0000-0000" pattern="\d{3}-\d{4}-\d{4}">
 	</div>
 	<div>
-		<sapn>配偶者の有無</sapn>
+		<label>配偶者の有無</label>
 		<span>必須</span>
 		<input id="yes" type="radio" name="spouse" value="yes" required>
 		<label for="yes">有</label>
@@ -68,7 +68,7 @@
 		<label for="no">無</label>
 	</div>
 	<div>
-		<span>区分</span>
+		<label>区分</label>
 		<span>必須</span>
 		<input id="home" type="radio" name="section" value="home" required>
 		<label for="home">入居</label>
