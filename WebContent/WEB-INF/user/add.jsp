@@ -20,7 +20,7 @@
 		<input id="namef" type="text" name="namef" placeholder="オオハラ　タロウ" pattern="[\u30A1-\u30F6 | \s\S]*" required>
 	</div>
 	<div>
-		<span>性別</span>
+		<label>性別</label>
 		<span>必須</span>
 		<input id="man" type="radio" name="gender" value="man" required>
 		<label for="man">男</label>
