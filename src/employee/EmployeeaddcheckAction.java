@@ -2,6 +2,7 @@ package employee;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.Employee;
 import tool.Action;
 
 public class EmployeeaddcheckAction extends Action {
@@ -11,9 +12,16 @@ public class EmployeeaddcheckAction extends Action {
     	String namef = request.getParameter("namef");
     	String birthday = request.getParameter("birthday");
     	String gender = request.getParameter("gender");
-    	String section = request.getParameter("section");
+    	String role = request.getParameter("role");
     	String job = request.getParameter("job");
-    	String enrollment = request.getParameter("enrollment");
+
+    	Employee em = new Employee();
+    	em.setName(name);
+    	em.setNamef(namef);
+    	em.setBirthDay(birthday);
+    	em.setGender(gender);
+    	em.setRole(role);
+    	em.setJob(job);
 
 
     	return "employee_add_check.jsp";
