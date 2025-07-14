@@ -5,13 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import bean.Employee;
-import bean.Gender;
 
 public class EmployeeDAO extends DAO {
 //	ログイン用
 	public Employee Login(String userId, String password) throws Exception {
 		Connection con = getConnection();
-		PreparedStatement ps = con.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENDER ON EMPLOYEE.GENDER_ID = GENDER.ID WHERE EMPLOYEE.ID = ? AND PASSWORD = ?;");
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENDER ON EMPLOYEE.GENDER_ID = GENDER.ID INNER JOIN JOB ON JOB_ID = JOB.ID WHERE EMPLOYEE.ID = ? AND PASSWORD = ?;");
 		ps.setString(1, userId);
 		ps.setString(2, password);
 		ResultSet rs = ps.executeQuery();
@@ -19,17 +18,15 @@ public class EmployeeDAO extends DAO {
 		Employee user = null;
 		if (rs.next()) {
 			user = new Employee();
-			Gender gender = new Gender();
 			user.setId(rs.getString("EMPLOYEE.ID"));
 			user.setName(rs.getString("NAME"));
 			user.setNamef(rs.getString("NAMEF"));
-			gender.setId(rs.getString("GENDER.ID"));
-			gender.setName("GENDER.NAME");
-			user.setGen(gender);
-			user.setGender(rs.getString("GENDER_ID"));
+			user.setGenderId(rs.getString("GENDER.ID"));
+			user.setGenderName("GENDER.NAME");
 			user.setBirthDaySql(rs.getDate("BIRTHDAY"));
 			user.setRole(rs.getString("ROLE"));
-			user.setJob(rs.getString("JOB_ID"));
+			user.setJobId(rs.getString("JOB.ID"));
+			user.setJobName(rs.getString("JOB.NAME"));
 			user.setSpouse(rs.getBoolean("SPOUSE"));
 		}
 
