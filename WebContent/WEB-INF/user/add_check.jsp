@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>利用者情報追加確認</title>
 </head>
 <body>
 <h1>利用者情報追加</h1>
 <h3>こちらの内容でよろしいですか？</h3>
-<table border="1">
+<table border="">
 	<tr>
 		<td>名前</td>
 		<td>大原</td>
