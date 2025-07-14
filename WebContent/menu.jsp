@@ -11,8 +11,8 @@
     <div class="container">
         <div class="left-section">
             <div class="menu-row">
-                <button class="menu-button" onclick="handleMenuClick('user-register')">
-                    利用者情報追加
+                <button class="menu-button" onclick="user/add.jsp">
+                    利用者情報登録
                 </button>
                 <button class="menu-button" onclick="handleMenuClick('user-update')">
                     利用者情報更新

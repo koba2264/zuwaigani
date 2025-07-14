@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>利用者情報追加画面</title>
+<title>利用者情報登録</title>
+<link rel="stylesheet" href="../../../css/add.css">
 </head>
 <body>
-<h1>利用者情報追加</h1>
+<h1>利用者情報登録</h1>
 <form action=".action" method="post">
 	<div>
 		<label for="name">名前</label>
