@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+body {
+    background-color: #f4d7c3;
+    font-family: 'Hiragino Sans', 'Yu Gothic', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+    height: calc(100vh - 40px);
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-end;
+    padding-left: 100px;
+}
+
+.menu-row {
+    display: flex;
+    gap: 30px;
+}
+
+.menu-button {
+    background-color: #f4a460;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    height:150px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-button:hover {
+    background-color: #e6935a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-button.employee {
+    background-color: #fffacd;
+}
+
+.menu-button.employee:hover {
+    background-color: #f0f0a8;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-right: 100px;
+}
+
+.logo {
+    width:400px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+}
+
+.medical-record-button {
+    background-color: #f4a460;
+    border: none;
+    border-radius: 20px;
+    width: 350px;
+    height: 200px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medical-record-button:hover {
+    background-color: #e6935a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .menu-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 80px;
+        tter-spacing: le4px;
+    }
+    
+    .medical-record-button {
+        width: 400px;
+        height: 300px;
+        font-size: 20px;
+    }
+}

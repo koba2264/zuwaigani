@@ -5,16 +5,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ログイン</title>
+<link rel="stylesheet" href="css/login.css">
+
 </head>
 <body>
-<img>システムアイコン</img>
-<form action=".action" method="post">
+<form action="Login.action" method="post">
 	<div>
-		<label for="userid">ユーザーID</label>
+		<p for="userid">ユーザーID</p>
 		<input id="userid" type="text" name="userid">
 	</div>
 	<div>
-		<label for="pass">パスワード</label>
+		<p for="pass">パスワード</p>
 		<input id="pass" type="password" name="pass">
 	</div>
 	<div>
