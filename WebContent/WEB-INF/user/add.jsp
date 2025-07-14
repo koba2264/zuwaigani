@@ -30,10 +30,14 @@
 	<div>
 		<label>血液型</label>
 		<span>必須</span>
-		<input id="man" type="radio" name="gender" value="man" required>
-		<label for="man">男</label>
-		<input id="weman" type="radio" name="gender" value="weman">
-		<label for="weman">女</label>
+		<input id="A" type="radio" name="blood" value="A" required>
+		<label for="A">A型</label>
+		<input id="O" type="radio" name="blood" value="O">
+		<label for="O">O型</label>
+		<input id="B" type="radio" name="blood" value="B">
+		<label for="B">B型</label>
+		<input id="AB" type="radio" name="blood" value="AB">
+		<label for="AB">AB型</label>
 	</div>
 	<div>
 		<label for="birthday">生年月日</label>
