@@ -5,12 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import bean.Employee;
+import bean.Gender;
 
 public class EmployeeDAO extends DAO {
 //	ログイン用
 	public Employee Login(String userId, String password) throws Exception {
 		Connection con = getConnection();
-		PreparedStatement ps = con.prepareStatement("SELECT * FROM EMPLOYEE WHERE ID = ? AND PASSWORD = ?;");
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENDER ON EMPLOYEE.GENDER_ID = GENDER.ID WHERE EMPLOYEE.ID = ? AND PASSWORD = ?;");
 		ps.setString(1, userId);
 		ps.setString(2, password);
 		ResultSet rs = ps.executeQuery();
@@ -18,9 +19,13 @@ public class EmployeeDAO extends DAO {
 		Employee user = null;
 		if (rs.next()) {
 			user = new Employee();
-			user.setId(rs.getString("ID"));
+			Gender gender = new Gender();
+			user.setId(rs.getString("EMPLOYEE.ID"));
 			user.setName(rs.getString("NAME"));
 			user.setNamef(rs.getString("NAMEF"));
+			gender.setId(rs.getString("GENDER.ID"));
+			gender.setName("GENDER.NAME");
+			user.setGen(gender);
 			user.setGender(rs.getString("GENDER_ID"));
 			user.setBirthDaySql(rs.getDate("BIRTHDAY"));
 			user.setRole(rs.getString("ROLE"));
