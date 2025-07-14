@@ -20,9 +20,9 @@ public class EmployeeeditAction extends Action {
     	em.setName(name);
     	em.setNamef(namef);
     	em.setBirthDay(birthday);
-    	em.setGender(gender);
+    	em.setGenderId(gender);
     	em.setRole(role);
-    	em.setJob(job);
+    	em.setJobId(job);
     	em.setSpouse(spouse);
 
 

@@ -4,36 +4,20 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Employee implements Serializable {
 
 	private String id;
+//
 	private String name;
 	private String namef;
-	private String gender;
+	private String genderName;
 	private String genderId;
-	private Gender gen;
 	private LocalDate birthDay;
 	private String role;
 	private boolean spouse;
-	private String job;
 	private String jobId;
-	private static Map<String, String> genderMap = new HashMap<String, String>(){
-		{
-			put("01","男性");
-			put("02","女性");
-			put("03","無回答");
-		}
-	};
-	private static Map<String, String> jobMap = new HashMap<String, String>(){
-		{
-			put("01","看護師");
-			put("02","医者");
-			put("03","無回答");
-		}
-	};
+	private String jobName;
 
 //	セッター
 	public void setId(String id) {
@@ -53,22 +37,23 @@ public class Employee implements Serializable {
 	public void setNamef(String namef) {
 		this.namef = namef;
 	}
-	public void setGender(String genderId) {
-		this.genderId = genderId;
-		this.gender = Employee.genderMap.get(genderId);
-	}
 	public void setSpouse(boolean spouse) {
 		this.spouse = spouse;
 	}
-	public void setJob(String jobId) {
-		this.setJobId(jobId);
-		this.job = Employee.jobMap.get(this.jobId);
-	}
-	private void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public void setGenderId(String genderId) {
+		this.genderId = genderId;
+	}
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+	}
+	public void setGenderName(String genderName) {
+		this.genderName = genderName;
 	}
 
 //	ゲッター
@@ -91,26 +76,20 @@ public class Employee implements Serializable {
 	public String getGenderId() {
 		return genderId;
 	}
-	public String getGender() {
-		return gender;
-	}
 	public String getRole() {
 		return role;
 	}
 	public boolean isSpouse() {
 		return spouse;
 	}
-	public String getJob() {
-		return job;
-	}
 	public String getJobId() {
 		return jobId;
 	}
-	public Gender getGen() {
-		return gen;
+	public String getJobName() {
+		return jobName;
 	}
-	public void setGen(Gender gen) {
-		this.gen = gen;
+	public String getGenderName() {
+		return genderName;
 	}
 
 }
