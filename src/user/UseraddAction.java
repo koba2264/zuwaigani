@@ -21,6 +21,6 @@ public class UseraddAction extends Action {
     	String section = request.getParameter("section");
 
 
-    	return "user_add.jsp";
+    	return "/WEB-INF/user/add.jsp";
     }
 }
