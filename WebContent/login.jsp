@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<form action=".action" method="post">
+<form action="Login.action" method="post">
 	<div>
 		<p for="userid">ユーザーID</p>
 		<input id="userid" type="text" name="userid">

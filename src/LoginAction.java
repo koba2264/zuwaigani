@@ -19,7 +19,7 @@ public class LoginAction extends Action {
 
 		if (employee!=null) {
 			session.setAttribute("employee", employee);
-			return "login-out.jsp";
+			return "menu.jsp";
 		}
     	return "login.jsp";
     }
