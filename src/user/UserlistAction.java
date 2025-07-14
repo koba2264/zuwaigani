@@ -10,6 +10,6 @@ public class UserlistAction extends Action {
     	String userid = request.getParameter("userid");
 
 
-    	return "user_list.jsp";
+    	return "/WEB-INF/user/list.jsp";
     }
 }

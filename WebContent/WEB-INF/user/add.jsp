@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>利用者情報登録</title>
-<link rel="stylesheet" href="../../../css/add.css">
+<link rel="stylesheet" href="/zuwaigani/css/add.css">
 </head>
 <body>
 <h1>利用者情報登録</h1>
@@ -31,10 +31,14 @@
 	<div>
 		<label>血液型</label>
 		<span>必須</span>
-		<input id="man" type="radio" name="gender" value="man" required>
-		<label for="man">男</label>
-		<input id="weman" type="radio" name="gender" value="weman">
-		<label for="weman">女</label>
+		<input id="a" type="radio" name="blood" value="a" required>
+		<label for="a">A</label>
+		<input id="b" type="radio" name="blood" value="b">
+		<label for="b">B</label>
+		<input id="ab" type="radio" name="blood" value="ab">
+		<label for="ab">AB</label>
+		<input id="o" type="radio" name="blood" value="o">
+		<label for="o">O</label>
 	</div>
 	<div>
 		<label for="birthday">生年月日</label>
