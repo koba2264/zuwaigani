@@ -14,6 +14,7 @@ public class Employee implements Serializable {
 	private String namef;
 	private String gender;
 	private String genderId;
+	private Gender gen;
 	private LocalDate birthDay;
 	private String role;
 	private boolean spouse;
@@ -104,6 +105,12 @@ public class Employee implements Serializable {
 	}
 	public String getJobId() {
 		return jobId;
+	}
+	public Gender getGen() {
+		return gen;
+	}
+	public void setGen(Gender gen) {
+		this.gen = gen;
 	}
 
 }
