@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class User implements Serializable {
 //	利用者ID
@@ -36,9 +34,7 @@ public class User implements Serializable {
 	private LocalDate day;
 //	区別
 	private Section section;
-//	アレルギーリスト
-	private List<Allergy> allergyList = new ArrayList<>();
-	private Careful careful;
+
 
 	// ゲッター
 	public String getId() {
@@ -88,12 +84,7 @@ public class User implements Serializable {
 	public String getBloodType() {
 		return bloodType;
 	}
-	public List<Allergy> getAllergyList() {
-		return allergyList;
-	}
-	public Careful getCareful() {
-		return careful;
-	}
+
 
 	// セッター
 	public void setId(String id) {
@@ -148,14 +139,5 @@ public class User implements Serializable {
 	}
 	public void setBloodType(String bloodType) {
 		this.bloodType = bloodType;
-	}
-	public void setAllergyList(List<Allergy> allergyList) {
-		this.allergyList = allergyList;
-	}
-	public void setAllergy(Allergy allergy) {
-		this.allergyList.add(allergy);
-	}
-	public void setCareful(Careful careful) {
-		this.careful = careful;
 	}
 }
