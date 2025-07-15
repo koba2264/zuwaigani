@@ -13,7 +13,7 @@ public class EmployeeDAO extends DAO {
 //	ログイン用
 	public Employee Login(String userId, String password) throws Exception {
 		Connection con = getConnection();
-		PreparedStatement ps = con.prepareStatement("SELECT * FROM EMPLOYEE INNER JOIN GENDER ON EMPLOYEE.GENDER_ID = GENDER.ID INNER JOIN JOB ON JOB_ID = JOB.ID WHERE EMPLOYEE.ID = ? AND PASSWORD = ?;");
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM EMPLOYEE WHERE EMPLOYEE.ID = ? AND PASSWORD = ?;");
 		ps.setString(1, userId);
 		ps.setString(2, password);
 		ResultSet rs = ps.executeQuery();
@@ -21,7 +21,7 @@ public class EmployeeDAO extends DAO {
 		Employee user = null;
 		if (rs.next()) {
 			user = new Employee();
-			user.setId(rs.getString("EMPLOYEE.ID"));
+			user.setId(rs.getString("ID"));
 			user.setName(rs.getString("NAME"));
 			user.setNamef(rs.getString("NAMEF"));
 			user.setGender(Gender.valueOf(rs.getString("GENDER")));
@@ -46,7 +46,7 @@ public class EmployeeDAO extends DAO {
 		ps.setString(2, user.getName());
 		ps.setString(3, user.getNamef());
 		ps.setString(4, password);
-		ps.setString(5, user.getGender().getName());
+		ps.setString(5, user.getGender().name());
 		ps.setDate(6, user.getBirthDaySql());
 		ps.setString(7, user.getJob().name());
 		ps.setString(8, user.getRole().name());

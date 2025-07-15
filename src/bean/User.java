@@ -133,6 +133,9 @@ public class User implements Serializable {
 	public void setBirthDay(String birthDay) {
 		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 	}
+	public void setBirthDay(LocalDate birthDay) {
+		this.birthDay = birthDay;
+	}
 	// sql用
 	public void setBirthDaySql(Date birthDay) {
 		this.birthDay = birthDay.toLocalDate();

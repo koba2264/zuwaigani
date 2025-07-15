@@ -2,7 +2,7 @@ package enu;
 
 public enum Section {
 	MOVEIN("入居"),
-	DAYSERVISE("デイサービス");
+	DAYSERVICE("デイサービス");
 
 	private final String name;
 	private Section(String name) {
