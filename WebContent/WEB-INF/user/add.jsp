@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>利用者情報登録</title>
+<title>利用者情報追加画面</title>
 <link rel="stylesheet" href="/zuwaigani/css/add.css">
 </head>
 <body>
-<h1>利用者情報登録</h1>
+<h1>利用者情報追加</h1>
 <form action=".action" method="post">
 	<div>
 		<label for="name">名前</label>
@@ -31,14 +31,14 @@
 	<div>
 		<label>血液型</label>
 		<span>必須</span>
-		<input id="a" type="radio" name="blood" value="a" required>
-		<label for="a">A</label>
-		<input id="b" type="radio" name="blood" value="b">
-		<label for="b">B</label>
-		<input id="ab" type="radio" name="blood" value="ab">
-		<label for="ab">AB</label>
-		<input id="o" type="radio" name="blood" value="o">
-		<label for="o">O</label>
+		<input id="A" type="radio" name="blood" value="A" required>
+		<label for="A">A型</label>
+		<input id="B" type="radio" name="blood" value="B">
+		<label for="B">B型</label>
+		<input id="O" type="radio" name="blood" value="O">
+		<label for="O">O型</label>
+		<input id="AB" type="radio" name="blood" value="AB">
+		<label for="AB">AB型</label>
 	</div>
 	<div>
 		<label for="birthday">生年月日</label>

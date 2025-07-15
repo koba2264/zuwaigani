@@ -19,9 +19,9 @@ public class EmployeeaddAction extends Action {
     	em.setName(name);
     	em.setNamef(namef);
     	em.setBirthDay(birthday);
-    	em.setGender(gender);
+    	em.setGenderId(gender);
     	em.setRole(role);
-    	em.setJob(job);
+    	em.setJobId(job);
 
     	request.setAttribute("em", em);
 

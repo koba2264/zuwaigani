@@ -19,9 +19,9 @@ public class EmployeeaddcheckAction extends Action {
     	em.setName(name);
     	em.setNamef(namef);
     	em.setBirthDay(birthday);
-    	em.setGender(gender);
+    	em.setGenderId(gender);
     	em.setRole(role);
-    	em.setJob(job);
+    	em.setJobId(job);
 
 
     	return "employee_add_check.jsp";
