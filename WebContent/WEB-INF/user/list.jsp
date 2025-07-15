@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,6 +16,16 @@
 				<span>利用者性別</span>
 				<span>利用者区分</span>
 			</div>
+			<c:forEach var="user" items="${ users }">
+	            <div class="user-list">
+					<span>${ user.id }</span>
+					<span>${ user.name }</span>
+					<span>${ user.gender.getName() }</span>
+					<span>${ user.section.getName() }</span>
+				</div>
+
+			</c:forEach>
+
 
 </body>
 
