@@ -1,8 +1,8 @@
 package bean;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+
+import enu.State;
 
 public class Medhis implements Serializable {
 //	病名
@@ -10,14 +10,8 @@ public class Medhis implements Serializable {
 //	発症年齢
 	private int age;
 //	状態
-	private String stateId;
-	private String state;
-	private static Map<String, String> stateMap = new HashMap<>();
-	static {
-		stateMap.put("01","治療中");
-		stateMap.put("02","寛容");
-		stateMap.put("03","治癒");
-	}
+	private State state;
+
 
 //	ゲッター
 	public String getName() {
@@ -26,10 +20,7 @@ public class Medhis implements Serializable {
 	public int getAge() {
 		return age;
 	}
-	public String getStateId() {
-		return stateId;
-	}
-	public String getState() {
+	public State getState() {
 		return state;
 	}
 
@@ -40,11 +31,7 @@ public class Medhis implements Serializable {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public void setStateId(String stateId) {
-		this.stateId = stateId;
-		this.setState(stateId);
-	}
-	private void setState(String stateId) {
-		this.state = stateMap.get(stateId);
+	public void setState(State state) {
+		this.state = state;
 	}
 }

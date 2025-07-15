@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import bean.Employee;
+import enu.Gender;
+import enu.Job;
+import enu.Role;
 
 public class EmployeeDAO extends DAO {
 //	ログイン用
@@ -21,12 +24,10 @@ public class EmployeeDAO extends DAO {
 			user.setId(rs.getString("EMPLOYEE.ID"));
 			user.setName(rs.getString("NAME"));
 			user.setNamef(rs.getString("NAMEF"));
-			user.setGenderId(rs.getString("GENDER.ID"));
-			user.setGenderName("GENDER.NAME");
+			user.setGender(Gender.valueOf(rs.getString("GENDER")));
 			user.setBirthDaySql(rs.getDate("BIRTHDAY"));
-			user.setRole(rs.getString("ROLE"));
-			user.setJobId(rs.getString("JOB.ID"));
-			user.setJobName(rs.getString("JOB.NAME"));
+			user.setRole(Role.valueOf(rs.getString("ROLE")));
+			user.setJob(Job.valueOf(rs.getString("JOB")));
 			user.setSpouse(rs.getBoolean("SPOUSE"));
 		}
 
@@ -45,10 +46,10 @@ public class EmployeeDAO extends DAO {
 		ps.setString(2, user.getName());
 		ps.setString(3, user.getNamef());
 		ps.setString(4, password);
-		ps.setString(5, user.getGenderId());
+		ps.setString(5, user.getGender().getName());
 		ps.setDate(6, user.getBirthDaySql());
-		ps.setString(7, user.getJobId());
-		ps.setString(8, user.getRole());
+		ps.setString(7, user.getJob().name());
+		ps.setString(8, user.getRole().name());
 		ps.setBoolean(9, user.isSpouse());
 		if (ps.executeUpdate() > 0) {
 			result = true;

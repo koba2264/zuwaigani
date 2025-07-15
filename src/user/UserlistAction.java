@@ -7,9 +7,6 @@ import tool.Action;
 public class UserlistAction extends Action {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-    	String userid = request.getParameter("userid");
-
-
     	return "/WEB-INF/user/list.jsp";
     }
 }

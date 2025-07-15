@@ -3,6 +3,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Employee;
+import enu.Gender;
+import enu.Job;
+import enu.Role;
 import tool.Action;
 
 public class EmployeeaddcheckAction extends Action {
@@ -19,9 +22,9 @@ public class EmployeeaddcheckAction extends Action {
     	em.setName(name);
     	em.setNamef(namef);
     	em.setBirthDay(birthday);
-    	em.setGenderId(gender);
-    	em.setRole(role);
-    	em.setJobId(job);
+    	em.setGender(Gender.valueOf(gender));
+    	em.setRole(Role.valueOf(role));
+    	em.setJob(Job.valueOf(job));
 
 
     	return "employee_add_check.jsp";

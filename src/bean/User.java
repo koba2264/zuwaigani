@@ -5,6 +5,9 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import enu.Gender;
+import enu.Section;
+
 public class User implements Serializable {
 //	利用者ID
 	private String id;

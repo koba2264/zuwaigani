@@ -7,6 +7,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import enu.Gender;
+import enu.Job;
+import enu.Role;
+
 public class Employee implements Serializable {
 //	従業員番号
 	private String id;
@@ -15,17 +19,15 @@ public class Employee implements Serializable {
 //	フリガナ
 	private String namef;
 //	性別
-	private String genderName;
-	private String genderId;
+	private Gender gender;
 //	生年月日
 	private LocalDate birthDay;
-//	01:管理者 02:一般
-	private String role;
+//	権限
+	private Role role;
 //	配偶者
 	private boolean spouse;
 //	職業
-	private String jobId;
-	private String jobName;
+	private Job job;
 //	メッセージ一覧
 	private List<Message> MessageList = new ArrayList<>();
 
@@ -47,29 +49,23 @@ public class Employee implements Serializable {
 	public void setNamef(String namef) {
 		this.namef = namef;
 	}
+	public void setJob(Job job) {
+		this.job = job;
+	}
 	public void setSpouse(boolean spouse) {
 		this.spouse = spouse;
 	}
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
-	}
-	public void setGenderId(String genderId) {
-		this.genderId = genderId;
-	}
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-	public void setJobName(String jobName) {
-		this.jobName = jobName;
-	}
-	public void setGenderName(String genderName) {
-		this.genderName = genderName;
 	}
 	public void setMessageList(List<Message> messageList) {
 		MessageList = messageList;
 	}
 	public void setMessage(Message message) {
 		MessageList.add(message);
+	}
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
 //	ゲッター
@@ -89,26 +85,20 @@ public class Employee implements Serializable {
 	public String getNamef() {
 		return namef;
 	}
-	public String getGenderId() {
-		return genderId;
-	}
-	public String getRole() {
+	public Role getRole() {
 		return role;
 	}
 	public boolean isSpouse() {
 		return spouse;
 	}
-	public String getJobId() {
-		return jobId;
-	}
-	public String getJobName() {
-		return jobName;
-	}
-	public String getGenderName() {
-		return genderName;
+	public Job getJob() {
+		return job;
 	}
 	public List<Message> getMessageList() {
 		return MessageList;
+	}
+	public Gender getGender() {
+		return gender;
 	}
 }
 
