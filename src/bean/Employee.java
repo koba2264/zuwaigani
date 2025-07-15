@@ -4,20 +4,30 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Employee implements Serializable {
-
+//	従業員番号
 	private String id;
-//
+//	名前
 	private String name;
+//	フリガナ
 	private String namef;
+//	性別
 	private String genderName;
 	private String genderId;
+//	生年月日
 	private LocalDate birthDay;
+//	01:管理者 02:一般
 	private String role;
+//	配偶者
 	private boolean spouse;
+//	職業
 	private String jobId;
 	private String jobName;
+//	メッセージ一覧
+	private List<Message> MessageList = new ArrayList<>();
 
 //	セッター
 	public void setId(String id) {
@@ -55,6 +65,12 @@ public class Employee implements Serializable {
 	public void setGenderName(String genderName) {
 		this.genderName = genderName;
 	}
+	public void setMessageList(List<Message> messageList) {
+		MessageList = messageList;
+	}
+	public void setMessage(Message message) {
+		MessageList.add(message);
+	}
 
 //	ゲッター
 	public String getId() {
@@ -91,6 +107,8 @@ public class Employee implements Serializable {
 	public String getGenderName() {
 		return genderName;
 	}
-
+	public List<Message> getMessageList() {
+		return MessageList;
+	}
 }
 
