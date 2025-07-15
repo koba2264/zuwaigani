@@ -22,6 +22,6 @@ public class UsereditcheckAction extends Action {
     	String section = request.getParameter("section");
 
 
-    	return "user_edit_check.jsp";
+    	return "/WEB-INF/user/edit_check.jsp";
     }
 }

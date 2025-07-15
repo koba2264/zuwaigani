@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+body {
+    background-color: #f4d7c3;
+    font-family: 'Hiragino Sans', 'Yu Gothic', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    justify-content: center;
+  align-items: center;   
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+.user-list {
+  border: 2px solid #eab08a;
+  background-color: #eab08a;      
+  padding: 10px;   
+  display: inline-flex;    
+  gap: 70px;   
+  border-radius: 8px;  
+  width: 700px;
+  margin-left: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.user-list:hover {
+  background-color: #e18f59; 
+  border-color: #e18f59; 
+}

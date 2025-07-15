@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>利用者情報重複エラー</title>
+<title>利用者情報追加エラー</title>
 </head>
 <body>
 <h1>利用者情報追加</h1>

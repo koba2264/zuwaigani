@@ -22,6 +22,6 @@ public class UsereditAction extends Action {
     	String section = request.getParameter("section");
 
 
-    	return "user_edit.jsp";
+    	return "/WEB-INF/user/edit.jsp";
     }
 }

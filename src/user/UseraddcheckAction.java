@@ -21,6 +21,6 @@ public class UseraddcheckAction extends Action {
     	String section = request.getParameter("section");
 
 
-    	return "/WEB-INF/user/add.jsp";
+    	return "/WEB-INF/user/add_check.jsp";
     }
 }

@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>利用者一覧</title>
+<link rel="stylesheet" href="/zuwaigani/css/list.css">
 </head>
 <body>
+        <h1>利用者一覧</h1>
+            <div class="user-list">
+				<span>利用者ID</span>
+				<span>利用者名</span>
+				<span>利用者性別</span>
+				<span>利用者区分</span>
+			</div>
 
 </body>
+
 </html>
