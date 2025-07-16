@@ -10,7 +10,7 @@
 <h1>従業員情報追加</h1>
 <p>従業員情報の追加が完了しました</p>
 <div>
-	<input type="submit" value="メニューへ">
+	<button onclick="location.href='/zuwaigani/menu.jsp'">メニューへ</button>
 </div>
 
 </body>
