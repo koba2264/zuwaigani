@@ -20,7 +20,7 @@
             </div>
 
             <div class="menu-row">
-                <button class="menu-button employee" onclick="">
+                <button class="menu-button employee" onclick="location.href='employee/Employeeadd.action'">
                     従業員情報追加
                 </button>
                 <button class="menu-button employee" onclick="">

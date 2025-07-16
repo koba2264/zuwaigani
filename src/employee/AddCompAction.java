@@ -1,4 +1,5 @@
 package employee;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,9 +10,11 @@ import enu.Job;
 import enu.Role;
 import tool.Action;
 
-public class EmployeeaddcheckAction extends Action {
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    	String id = request.getParameter("id");
+public class AddCompAction extends Action {
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String id = request.getParameter("id");
     	String name = request.getParameter("name");
     	String namef = request.getParameter("namef");
     	String birthday = request.getParameter("birthday");
@@ -31,10 +34,11 @@ public class EmployeeaddcheckAction extends Action {
     	em.setSpouse(spouse);
 
     	EmployeeDAO dao = new EmployeeDAO();
-    	if (dao.checkDuplication(em)) {
-    		request.setAttribute("employee", em);
-    		return "/WEB-INF/employee/add_check.jsp";
+    	if (dao.SignUp(em)) {
+    		return "/WEB-INF/employee/add_comp.jsp";
     	}
     	return "/WEB-INF/employee/duplication_error.jsp";
-    }
+
+	}
+
 }

@@ -28,5 +28,11 @@
 
 
 </body>
-
+<script>
+	document.querySelectorAll('.user-list').forEach((element) => {
+		element.addEventListener('click', () => {
+			
+		})
+	})
+</script>
 </html>

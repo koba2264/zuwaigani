@@ -39,7 +39,7 @@ public class Employee implements Serializable {
 		this.name = name;
 	}
 	public void setBirthDay(String birthDay) {
-		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	}
 //	sql用
 	public void setBirthDaySql(Date birthDay) {

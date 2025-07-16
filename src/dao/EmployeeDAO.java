@@ -38,14 +38,14 @@ public class EmployeeDAO extends DAO {
 	}
 
 //	新規登録用
-	public boolean SignUp(Employee user, String password) throws Exception {
+	public boolean SignUp(Employee user) throws Exception {
 		boolean result = false;
 		Connection con = getConnection();
 		PreparedStatement ps = con.prepareStatement("INSERT INTO EMPLOYEE VALUES (?,?,?,?,?,?,?,?,?);");
 		ps.setString(1, user.getId());
 		ps.setString(2, user.getName());
 		ps.setString(3, user.getNamef());
-		ps.setString(4, password);
+		ps.setString(4, user.getId());
 		ps.setString(5, user.getGender().name());
 		ps.setDate(6, user.getBirthDaySql());
 		ps.setString(7, user.getJob().name());
@@ -59,6 +59,18 @@ public class EmployeeDAO extends DAO {
 		con.close();
 
 		return result;
-  }
+	}
+
+//	IDの重複チェック
+	public boolean checkDuplication(Employee em) throws Exception {
+		Connection con = getConnection();
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM EMPLOYEE WHERE EMPLOYEE.ID = ?;");
+		ps.setString(1, em.getId());
+		ResultSet rs = ps.executeQuery();
+
+		boolean result = !rs.next();
+
+		return result;
+	}
 }
 
