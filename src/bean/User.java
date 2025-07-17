@@ -131,7 +131,7 @@ public class User implements Serializable {
 		this.section = section;
 	}
 	public void setBirthDay(String birthDay) {
-		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	}
 	public void setBirthDay(LocalDate birthDay) {
 		this.birthDay = birthDay;
