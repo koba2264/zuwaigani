@@ -30,6 +30,8 @@ public class Employee implements Serializable {
 	private Job job;
 //	メッセージ一覧
 	private List<Message> MessageList = new ArrayList<>();
+//	新着メッセージ数
+	private int messageNum;
 
 //	セッター
 	public void setId(String id) {
@@ -39,7 +41,7 @@ public class Employee implements Serializable {
 		this.name = name;
 	}
 	public void setBirthDay(String birthDay) {
-		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	}
 //	sql用
 	public void setBirthDaySql(Date birthDay) {
@@ -99,6 +101,13 @@ public class Employee implements Serializable {
 	}
 	public Gender getGender() {
 		return gender;
+	}
+
+	public int getMessageNum() {
+		return messageNum;
+	}
+	public void setMessageNum(int messageNum) {
+		this.messageNum = messageNum;
 	}
 }
 

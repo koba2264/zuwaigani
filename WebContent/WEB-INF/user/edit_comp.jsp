@@ -10,7 +10,7 @@
 <h1>利用者情報更新</h1>
 <p>利用者情報の更新が完了しました</p>
 <div>
-	<input type="submit" value="メニューへ">
+	<button onclick="location.href='/zuwaigani/menu.jsp'">メニューへ</button>
 </div>
 
 </body>

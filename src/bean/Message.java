@@ -13,6 +13,8 @@ public class Message implements Serializable, Comparable<Message> {
 	private boolean looked;
 //	自分のか
 	private boolean mine;
+//	送ったID
+	private String sendId;
 
 //	ゲッター
 	public String getText() {
@@ -56,5 +58,11 @@ public class Message implements Serializable, Comparable<Message> {
 		} else {
 			return 1;
 		}
+	}
+	public String getSendId() {
+		return sendId;
+	}
+	public void setSendId(String sendId) {
+		this.sendId = sendId;
 	}
 }

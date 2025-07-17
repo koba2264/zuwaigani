@@ -22,11 +22,31 @@
 					<span>${ user.name }</span>
 					<span>${ user.gender.getName() }</span>
 					<span>${ user.section.getName() }</span>
+					<input class="id" type="hidden" name="id" value="${ user.id }">
 				</div>
-
 			</c:forEach>
 
 
 </body>
+<script>
+	document.querySelectorAll('.user-list').forEach((element) => {
+		element.addEventListener('click', () => {
+			const id = element.getElementsByClassName("id")[0].value;
+		    const form = document.createElement('form');
+		    const request = document.createElement('input');
 
+		    form.method = 'POST';
+		    form.action = 'Useredit.action';
+
+		    request.type = 'hidden';
+		    request.name = 'id';
+		    request.value = id;
+
+		    form.appendChild(request);
+		    document.body.appendChild(form);
+
+		    form.submit();
+		})
+	})
+</script>
 </html>
