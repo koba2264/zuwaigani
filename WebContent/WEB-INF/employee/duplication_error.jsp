@@ -10,7 +10,7 @@
 <h1>従業員情報追加</h1>
 <p>入力された従業員情報は既に登録されています</p>
 <div>
-	<input type="submit" value="戻る">
+	<button onclick="history.back();">戻る</button>
 </div>
 
 </body>

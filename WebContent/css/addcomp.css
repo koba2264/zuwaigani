@@ -1,0 +1,91 @@
+@CHARSET "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ヘッダー */
+h1 {
+    text-align: center;
+    color: #e67e22;
+    font-size: 32px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #f39c12;
+}
+
+/* 完了メッセージ */
+p {
+    text-align: center;
+    color: #d35400;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    background-color: #ffffff;
+    padding: 25px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #f39c12;
+}
+
+/* ボタンコンテナ */
+div {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ボタンスタイル */
+input[type="submit"] {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 成功アイコン風の装飾 */
+h1::before {
+    content: "✓";
+    display: inline-block;
+    margin-right: 15px;
+    color: #27ae60;
+    font-size: 28px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

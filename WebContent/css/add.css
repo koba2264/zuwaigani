@@ -1,0 +1,160 @@
+
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #e67e22;
+    font-size: 28px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f39c12;
+    width: 400px;
+    margin: 0 auto 40px auto;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+form > div {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+label {
+    font-weight: bold;
+    color: #d35400;
+    margin-bottom: 8px;
+    display: block;
+}
+
+span {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+}
+
+
+input[type="text"],
+input[type="tel"],
+input[type="date"] {
+    padding: 12px 15px;
+    border: 2px solid #fdebd0;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.2);
+}
+
+input[type="text"]:invalid,
+input[type="tel"]:invalid,
+input[type="date"]:invalid {
+    border-color: #e74c3c;
+}
+
+
+input::placeholder {
+    color: #bdc3c7;
+    font-style: italic;
+}
+
+
+div:has(input[type="radio"]) {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+div:has(input[type="radio"]) > label:first-child {
+    margin-right: 20px;
+    min-width: 120px;
+}
+
+
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    accent-color: #f39c12;
+    cursor: pointer;
+}
+
+input[type="radio"] + label {
+    margin-bottom: 0;
+    margin-right: 20px;
+    font-weight: normal;
+    cursor: pointer;
+    color: #333;
+}
+
+input[type="submit"] {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 20px auto 0;
+    display: block;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form > div:last-child {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+

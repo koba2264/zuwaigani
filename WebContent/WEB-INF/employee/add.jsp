@@ -8,7 +8,12 @@
 </head>
 <body>
 <h1>従業員情報追加</h1>
-<form action=".action" method="post">
+<form action="Employeeaddcheck.action" method="post">
+	<div>
+		<label for="id">ID</label>
+		<span>必須</span>
+		<input id="id" type="text" name="id" pattern="[a-zA-Z0-9]{8}" required>
+	</div>
 	<div>
 		<label for="name">名前</label>
 		<span>必須</span>
@@ -22,10 +27,12 @@
 	<div>
 		<label>性別</label>
 		<span>必須</span>
-		<input id="man" type="radio" name="gender" value="man" required>
+		<input id="man" type="radio" name="gender" value="MALE" required>
 		<label for="man">男</label>
-		<input id="weman" type="radio" name="gender" value="weman">
+		<input id="weman" type="radio" name="gender" value="FEMALE">
 		<label for="weman">女</label>
+		<input id="no" type="radio" name="gender" value="NO">
+		<label for="no">無回答</label>
 	</div>
 	<div>
 		<label>血液型</label>
@@ -47,21 +54,32 @@
 	<div>
 		<label>区分</label>
 		<span>必須</span>
-		<input id="admin" type="radio" name="section" value="admin" required>
+		<input id="admin" type="radio" name="role" value="ADMIN" required>
 		<label for="admin">管理者</label>
-		<input id="worker" type="radio" name="section" value="worker">
+		<input id="worker" type="radio" name="role" value="COMMON">
 		<label for="worker">従業員</label>
+	</div>
+	<div>
+		<label>配偶者</label>
+		<span>必須</span>
+		<input id="true" type="radio" name="spouse" value="true" required>
+		<label for="true">いる</label>
+		<input id="false" type="radio" name="spouse" value="false">
+		<label for="false">いない</label>
 	</div>
 	<div>
 		<label for="post-select">役職</label>
 		<span>必須</span>
-		<select name="posts" id="post-select">
-			<option value="carer">介護士</option>
-			<option value="assist">介護助手</option>
-			<option value="welfare">介護福祉士</option>
-			<option value="support">介護支援専門員</option>
-			<option value="consult">生活相談員</option>
-			<option value="service">サービス提供責任者</option>
+		<select name="job" id="post-select">
+			<option value="DOCTOR">医者</option>
+			<option value="NURSE">看護士</option>
+			<option value="CARER">介護士</option>
+			<option value="ASSIST">介護助手</option>
+			<option value="WELFARE">介護福祉士</option>
+			<option value="SUPPORT">介護支援専門員</option>
+			<option value="CONSULT">生活相談員</option>
+			<option value="SERVICE">サービス提供責任者</option>
+			<option value="NO">なし</option>
 		</select>
 	</div>
 	<div>
