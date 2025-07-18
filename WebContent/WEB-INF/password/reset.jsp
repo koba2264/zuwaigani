@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>パスワードリセット確認画面</title>
 </head>
 <body>
+<h1>パスワードリセット</h1>
+<p>大原 太郎さんの</p>
+<p>パスワードをリセットします。</p>
+<div>
+	<input type="submit" value="戻る">
+	<input type="submit" value="確認">
+</div>
 
 </body>
 </html>

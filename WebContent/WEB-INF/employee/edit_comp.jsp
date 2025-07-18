@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>従業員情報更新完了</title>
 </head>
 <body>
+<h1>従業員情報更新</h1>
+<p>従業員情報の更新が完了しました</p>
+<div>
+	<input type="submit" value="メニューへ">
+</div>
 
 </body>
 </html>
