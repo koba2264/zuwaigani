@@ -4,9 +4,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>処方箋追加画面</title>
 </head>
 <body>
+<form action=".action" method="post">
+	<div>
+		<label for="dragname">薬名:</label>
+		<input id="dragname" type="text" name="dragname" pattern="[\s\S]*" required>
+	</div>
+	<div>
+		<label for="timing">投薬:</label>
+		<input id="timing" type="text" name="timing" pattern="[\s\S]*" required>
+	</div>
+	<div>
+		<label for="dragamount">薬量:</label>
+		<input id="dragamount" type="text" name="dragamount" pattern="[\s\S]*" required>
+	</div>
+	<div>
+		<input type="submit" value="追加">
+	</div>
+<form>
+<div>
+	<input type="submit" value="戻る">
+</div>
 
 </body>
 </html>
