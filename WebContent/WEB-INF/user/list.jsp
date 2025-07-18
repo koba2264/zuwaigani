@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>利用者情報一覧</title>
 </head>
 <body>
+<h1>利用者一覧</h1>
+<div>
+	<p>利用者ID</p>
+	<p>利用者名</p>
+	<p>利用者性別</p>
+	<p>利用者区分</p>
+</div>
 
 </body>
 </html>
