@@ -20,5 +20,15 @@
 	</div>
 </form>
 
+
+<dialog open>
+	<h3>以下の内容を追加しますか？</h3>
+	<p>大原さんはアレルギー持ちの為、介護する際には注意してください。</p>
+	<form method="dialog">
+		<button>戻る</button>
+		<button>追加</button>
+	</form>
+</dialog>
+
 </body>
 </html>
