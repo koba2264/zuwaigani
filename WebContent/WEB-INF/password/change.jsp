@@ -4,9 +4,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>パスワード変更画面</title>
 </head>
 <body>
+<h1>パスワード変更</h1>
+<p>大原 太郎さんの</p>
+<p>パスワードを変更します。</p>
+
+<div>
+	<label>ユーザーID</label>
+	<p>empl0001</p>
+</div>
+<div>
+	<label for="newpass">新しいパスワード</label>
+	<p>${ user.newpass }</p>
+	<input type="password" name="newpass" value="${ user.newpass }">
+</div>
+
+<div>
+	<input type="submit" value="変更">
+</div>
 
 </body>
 </html>

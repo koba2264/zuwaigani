@@ -10,6 +10,6 @@ public class PasswordlistAction extends Action {
     	String emplid = request.getParameter("emplid");
 
 
-    	return "password_list.jsp";
+    	return "/WEB-INF/employee/list.jsp";
     }
 }
