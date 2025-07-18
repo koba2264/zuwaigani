@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>処方箋投薬確認画面</title>
 </head>
 <body>
+<h2>以下の薬を服薬しましたか？</h2>
+<p>ビタミンB複合剤</p>
+
+<div>
+	<input type="submit" value="戻る">
+	<input type="submit" value="確定">
+</div>
 
 </body>
 </html>
