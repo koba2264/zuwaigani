@@ -11,6 +11,7 @@
 <p>パスワードリセットが完了しました。</p>
 <div>
 	<input type="submit" value="従業員一覧へ">
+	<a href="/zuwaigani/WebContent/WEB-INF/employee/list.jsp">従業員一覧へ</a>
 </div>
 
 </body>
