@@ -17,7 +17,7 @@ public class UseraddAction extends Action {
     	String address = request.getParameter("address");
     	String sos1 = request.getParameter("sos1");
     	String sos2 = request.getParameter("sos2");
-    	String spouse = request.getParameter("spouse");
+    	boolean spouse = request.getParameter("spouse") == "yes" ? true: false;
     	String section = request.getParameter("section");
 
 
