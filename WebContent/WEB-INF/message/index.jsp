@@ -24,6 +24,11 @@
 				<p>${ message.text }</p>
 			</div>
 		</c:forEach>
+		<div id="myId" data-name="${ sendId }"></div>
+		<div id="sendId" data-name="${ myId }"></div>
 	</div>
+	<button id="test">btn</button>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="/zuwaigani/js/chat.js"></script>
 </body>
 </html>

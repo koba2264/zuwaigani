@@ -39,6 +39,7 @@
 		    const form = document.createElement('form');
 		    const request = document.createElement('input');
 		    const request2 = document.createElement('input');
+		    const myId = document.createElement('input');
 
 		    form.method = 'POST';
 		    form.action = 'Message.action';

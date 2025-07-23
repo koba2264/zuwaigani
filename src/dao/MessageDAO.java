@@ -42,4 +42,30 @@ public class MessageDAO extends DAO {
 
 		return messageList;
 	}
+
+//	既読
+	public void messageLooked(String sendId, String receiveId) throws Exception{
+		Connection con = getConnection();
+		PreparedStatement ps = con.prepareStatement("UPDATE MESSAGE SET LOOKED = TRUE WHERE SEND_ID = ? AND RECEIVE_ID = ?;");
+		ps.setString(1, sendId);
+		ps.setString(2, receiveId);
+		ps.executeUpdate();
+
+		ps.close();
+		con.close();
+	}
+
+//	送信
+	public void sendMessage(String sendId, String receiveId, String text, LocalDateTime now) throws Exception {
+		Connection con = getConnection();
+		PreparedStatement ps = con.prepareStatement("INSERT INTO MESSAGE(SEND_ID, RECEIVE_ID, TEXT, SENDING_TIME) VALUES(?,?,?,?);");
+		ps.setString(1, sendId);
+		ps.setString(2, receiveId);
+		ps.setString(3, text);
+		ps.setObject(4, now);
+		ps.executeUpdate();
+
+		ps.close();
+		con.close();
+	}
 }
