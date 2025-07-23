@@ -17,7 +17,9 @@ public class MessagelistAction extends Action {
     	List<Employee> employeeList = dao.getEmployeeList(employee.getId());
 
     	request.setAttribute("employeeList", employeeList);
+    	request.setAttribute("id", employee.getId());
 
-    	return "/WEB-INF/message/list.jsp";
+
+    	return "/WEB-INF/message/personalChat.jsp";
     }
 }

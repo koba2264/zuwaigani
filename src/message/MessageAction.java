@@ -20,6 +20,11 @@ public class MessageAction extends Action {
     	List<Message> messages = dao.getMessageList(employee.getId(), id);
     	request.setAttribute("name", name);
     	request.setAttribute("messages", messages);
+    	request.setAttribute("sendId", id);
+    	request.setAttribute("myId", employee.getId());
+
+//    	既読にする
+    	dao.messageLooked(id, employee.getId());
 
     	return "/WEB-INF/message/index.jsp";
     }
