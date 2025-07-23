@@ -45,5 +45,14 @@
 	<input type="submit" value="追加">
 </div>
 
+<dialog open>
+  <p>以下の内容を削除しますか？</p>
+  <p>0:00排泄介助</p>
+  <form method="dialog">
+    <button>戻る</button>
+    <button>削除</button>
+  </form>
+</dialog>
+
 </body>
 </html>
