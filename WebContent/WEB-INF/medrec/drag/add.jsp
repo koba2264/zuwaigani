@@ -23,7 +23,7 @@
 	<div>
 		<input type="submit" value="追加">
 	</div>
-<form>
+</form>
 <div>
 	<input type="submit" value="戻る">
 </div>
