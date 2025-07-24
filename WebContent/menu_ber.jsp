@@ -1,21 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>KobaSystem</title>
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+.container {
+  width: 100vw;
+  height: 88vh;
+  display: flex;
+}
 
 .header {
-  width: 100%;
-  height: 100px;
+  width: 100vw;
+  height: 18vh;
   background-color: #f39c12;
   color: white;
   display: flex;
@@ -60,7 +61,7 @@
 	 margin-top: 10px;
 }
 .header-right button {
-  background-color: #e67e22; 
+  background-color: #e67e22;
   color: white;
   border: none;
   border-radius: 6px;
@@ -80,20 +81,20 @@
 }
 
 .sidebar {
-	width: 100px;
-	height: 450px;
+	width: 15%;
+	height: 100%;
 	background-color: #f39c12;
 	color: white;
 }
 .sideber-menu-box {
 	display: flex;
   	flex-direction: column;
-  	align-items: center;  
+  	align-items: center;
   	justify-content: center;
- 	height: 70px;  
-  	width: 100px;   
-  	margin-bottom: 5px; 
-  	
+ 	height: 70px;
+  	width: 100px;
+  	margin-bottom: 5px;
+
 }
 .sideber-menu-box i {
 	font-size: 40px;
@@ -115,10 +116,15 @@
 	width: 100%;
 	height: 100%;
 	text-decoration: none;
-	color: white;      
+	color: white;
 }
 .sideber-menu-box :hover {
   background-color: #d35400;
+}
+.content {
+  height: 100%;
+  width: 85%;
+
 }
 </style>
 </head>
@@ -142,6 +148,7 @@
 
 <div class="main">
 
+<div class="container">
 <div class="sidebar">
 	<div class="sideber-menu-box">
 		<a href="">
@@ -182,5 +189,3 @@
 </div>
 
 <div class="content">
-</body>
-</html>

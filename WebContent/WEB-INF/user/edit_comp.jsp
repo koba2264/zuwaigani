@@ -5,12 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>利用者情報更新完了</title>
+<link rel="stylesheet" href="/zuwaigani/css/comp.css">
 </head>
 <body>
-<h1>利用者情報更新</h1>
-<p>利用者情報の更新が完了しました</p>
-<div>
-	<button onclick="location.href='/zuwaigani/menu.jsp'">メニューへ</button>
+<div class="container">
+    <div class="main-card">
+        <div class="success-icon"></div>
+        <h1>利用者情報更新完了</h1>
+        <p class="success-message">利用者情報の更新が正常に完了しました。<br>ご登録いただいた情報は安全に更新されています。</p>
+        <div class="button-container">
+             <button onclick="location.href='/zuwaigani/menu.jsp'" class="btn">メニューへ</button>
+            <input type="button" value="利用者一覧を確認" class="btn secondary-btn">
+        </div>
+    </div>
+    
 </div>
 
 </body>

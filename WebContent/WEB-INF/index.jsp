@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,24 +19,24 @@
 			<div class="header-top">
 				<div class="header-top1">
 					<div class="entry-block">
-						<div class="entry-date">入居日: ${ medrec.user.day }</div>
-						<div class="name">${ medrec.user.name } 様</div>
+						<div class="entry-date">入居日: 2024-10-01</div>
+						<div class="name">小林 悟 様</div>
 					</div>
 					<div class="patient-info">
 						<div class="status-block">
-							<div class="status">${ medrec.user.section.getName() }</div>
-							<div class="birth">${ medrec.user.birthDay }</div>
+							<div class="status">入居</div>
+							<div class="birth">1979-11-01</div>
 						</div>
 						<div class="room-number">部屋番号 A-201</div>
 						<div class="contact-block">
-							<div>電話先 ${ medrec.user.number }</div>
-							<div>緊急連絡先 1 ${ medrec.user.sos1 }</div>
-							<div>緊急連絡先 2 ${ medrec.user.sos2 }</div>
+							<div>電話先 0809999999</div>
+							<div>緊急連絡先 1 000000000</div>
+							<div>緊急連絡先 2 000000000</div>
 						</div>
 					</div>
 				</div>
 				<div class="level-block" id="showAddlevelModal" onclick="showAddlevelModal()">
-					<div class="level-label">${ medrec.level }</div>
+					<div class="level-label">Ⅱ</div>
 					<div class="level-label">介助レベル</div>
 				</div>
 				<div class="datetime-block">
@@ -67,54 +65,48 @@
 					<button class="btn add-button-medicine"
 						onclick="showAddMedicineModal()">薬を追加</button>
 					<div id="morning" class="medicine-list">
-					<c:forEach var="drag" items="${ medrec.morningDrag }">
 						<div class="medicine-item">
 							<div class="medicine-info">
-								<div class="medicine-name">${ drag.name }</div>
-								<div class="medicine-dose">${ drag.amount }錠/${ drag.timing.getName() }</div>
+								<div class="medicine-name">ビタミンB複合剤</div>
+								<div class="medicine-dose">1錠/食後</div>
 							</div>
 							<div class="medicine-actions">
 								<input type="checkbox" class="checkbox"
-									onchange="markAsTaken(this, ${ drag.name }, '朝')">
+									onchange="markAsTaken(this, 'ビタミンB複合剤', '朝')">
 								<button class="btn btn-small btn-danger"
 									onclick="removeMedicine(this)">削除</button>
 							</div>
 						</div>
-					</c:forEach>
 					</div>
 
 					<div id="noon" class="medicine-list" style="display: none;">
-					<c:forEach var="drag" items="${ medrec.noonDrag }">
 						<div class="medicine-item">
 							<div class="medicine-info">
-								<div class="medicine-name">${ drag.name }</div>
-								<div class="medicine-dose">${ drag.amount }錠/${ drag.timing.getName() }</div>
+								<div class="medicine-name">血圧薬</div>
+								<div class="medicine-dose">1錠/食後</div>
 							</div>
 							<div class="medicine-actions">
 								<input type="checkbox" class="checkbox"
-									onchange="markAsTaken(this, ${ drag.name }, '昼')">
+									onchange="markAsTaken(this, '血圧薬', '昼')">
 								<button class="btn btn-small btn-danger"
 									onclick="removeMedicine(this)">削除</button>
 							</div>
 						</div>
-					</c:forEach>
 					</div>
 
 					<div id="evening" class="medicine-list" style="display: none;">
-					<c:forEach var="drag" items="${ medrec.nightDrag }">
 						<div class="medicine-item">
 							<div class="medicine-info">
-								<div class="medicine-name">${ drag.name }</div>
-								<div class="medicine-dose">${ drag.amount }錠/${ drag.timing.getName() }</div>
+								<div class="medicine-name">胃薬</div>
+								<div class="medicine-dose">1錠/食後</div>
 							</div>
 							<div class="medicine-actions">
 								<input type="checkbox" class="checkbox"
-									onchange="markAsTaken(this, ${ drag.name }, '夜')">
+									onchange="markAsTaken(this, '胃薬', '晩')">
 								<button class="btn btn-small btn-danger"
 									onclick="removeMedicine(this)">削除</button>
 							</div>
 						</div>
-					</c:forEach>
 					</div>
 
 					<div id="history" class="medicine-list" style="display: none;">
@@ -144,21 +136,7 @@
 				<button class="btn btn-add-new" onclick="openAddModal()">追加</button>
 				<!-- 最新の申し送り事項表示 -->
 				<div class="handover-list" id="latestHandover">
-				<c:choose>
-					<c:when test="${ medrec.mangList.size() > 0 }">
-						<c:forEach var="mang" items="${ medrec.mangList }">
-		                    <div class="handover-item">
-		                    	<div class="handover-content">${ mang.employee }</div>
-		                        <div class="handover-meta">
-		                        	${ mang.message }
-		                        </div>
-		                 	</div>
-						</c:forEach>
-					</c:when>
-					<c:otherwise>
-						<div class="no-handover">申し送り事項がありません</div>
-					</c:otherwise>
-				</c:choose>
+					<div class="no-handover">申し送り事項がありません</div>
 				</div>
 			</div>
 		</div>
@@ -183,7 +161,26 @@
 
 				<div class="schedule-list" id="scheduleList">
 					<div class="schedule-item">
-
+						<div class="schedule-time">8:00</div>
+						<div class="schedule-content">朝食・服薬</div>
+						<div class="schedule-actions">
+							<button class="btn btn-small-schedule"
+								onclick="editSchedule(this)">編集</button>
+							<button class="btn btn-small-schedule btn-danger-schedule"
+								onclick="removeSchedule(this)">削除</button>
+						</div>
+					</div>
+					<div class="schedule-item">
+						<div class="schedule-time">11:00</div>
+						<div class="schedule-content">リハビリ</div>
+						<div class="schedule-actions">
+							<button class="btn btn-small-schedule"
+								onclick="editSchedule(this)">編集</button>
+							<button class="btn btn-small-schedule btn-danger-schedule"
+								onclick="removeSchedule(this)">削除</button>
+						</div>
+					</div>
+					<div class="schedule-item">
 						<div class="schedule-time">14:30</div>
 						<div class="schedule-content">リハビリ</div>
 						<div class="schedule-actions">
@@ -219,9 +216,6 @@
 					身体測定
 					<button class="btn add-button-schedule"
 						id="showAddmeasurementsModal" onclick="showAddmeasurementsModal()">追加</button>
-				</div>
-				<div class="measurements-list">
-					<img src="image/sokutei.png" alt="身体測定" width="100" height="100" />
 				</div>
 			</div>
 		</div>
@@ -406,6 +400,9 @@
 			</form>
 		</div>
 	</div>
+	
+	
+
 	<!-- 注意事項追加/編集モーダル -->
 	<div id="addcareModal" class="modal">
 		<div class="modal-content2" class="modal-content">
@@ -414,37 +411,37 @@
 			<form id="careForm">
 				<div class="form-content">
 					<div class="modalabel-content">
-						<img src="/zuwaigani/image/work.png" alt="歩行介助" width="40" height="40" /> <label
+						<img src="image/work.png" alt="歩行介助" width="40" height="40" /> <label
 							class="label-text">歩行介助</label> <input type="checkbox"
 							name="care" value="歩行介助">
 					</div>
 					<div class="modalabel-content">
-						<img src="/zuwaigani/image/eat.png" alt="食事介助" width="40" height="40" /> <label
+						<img src="image/eat.png" alt="食事介助" width="40" height="40" /> <label
 							class="label-text">食事介助</label> <input type="checkbox"
 							name="care" value="食事介助">
 					</div>
 					<div class="modalabel-content">
-						<img src="/zuwaigani/image/wash.png" alt="入浴介助" width="40" height="40" /> <label
+						<img src="image/wash.png" alt="入浴介助" width="40" height="40" /> <label
 							class="label-text"> 入浴介助</label> <input type="checkbox"
 							name="care" value="入浴介助">
 					</div>
 					<div class="modalabel-content">
-						<img src="/zuwaigani/image/bed.png" alt="褥瘡介助" width="40" height="40" /> <label
+						<img src="image/bed.png" alt="褥瘡介助" width="40" height="40" /> <label
 							class="label-text">褥瘡介助</label> <input type="checkbox"
 							name="care" value="褥瘡介助">
 					</div>
 					<div class="modalabel-content">
-						<img src="/zuwaigani/image/drag.png" alt="服薬介助" width="40" height="40" /> <label
+						<img src="image/drag.png" alt="服薬介助" width="40" height="40" /> <label
 							class="label-text">服薬介助</label> <input type="checkbox"
 							name="care" value="服薬介助">
 					</div>
 					<div class="modalabel-content">
-						<img src="/zuwaigani/image/toire.png" alt="排泄介助" width="40" height="40" /> <label
+						<img src="image/toire.png" alt="排泄介助" width="40" height="40" /> <label
 							class="label-text">排泄介助</label> <input type="checkbox"
 							name="care" value="排泄介助">
 					</div>
 					<div class="modalabel-content">
-						<img src="/zuwaigani/image/car.png" alt="車椅子介助" width="40" height="40" /> <label
+						<img src="image/car.png" alt="車椅子介助" width="40" height="40" /> <label
 							class="label-text">車椅子介助</label> <input type="checkbox"
 							name="care" value="車椅子介助">
 					</div>
@@ -460,6 +457,7 @@
 
 		</div>
 	</div>
+	
 	<!-- 介助レベル編集モーダル -->
 	<div id="addlevelModal" class="modal">
 		<div class="modal-content2" class="modal-content">
@@ -469,11 +467,11 @@
 				<div class="form-content">
 					<div class="modalabel-content" data-level="レベル1">
 						<i class="fas fa-exclamation-circle"></i>
-						<label class="level-text">レベル１</label>
+						<label class="level-text">レベル１</label> 
 					</div>
 					<div class="modalabel-content" data-level="レベル2">
-						<i class="fas fa-exclamation-circle"></i>
-						<label class="level-text">レベル２</label>
+						<i class="fas fa-exclamation-circle"></i> 
+						<label class="level-text">レベル２</label> 
 					</div>
 					<div class="modalabel-content" data-level="レベル3">
 						<i class="fas fa-exclamation-circle"></i> <label
@@ -484,7 +482,7 @@
 							class="level-text"> レベル４</label>
 					</div>
 					<div class="modalabel-content" data-level="レベル5">
-						<i class="fas fa-exclamation-circle"></i>
+						<i class="fas fa-exclamation-circle"></i> 
 						<label class="level-text">レベル５</label>
 					</div>
 				</div>
@@ -492,6 +490,7 @@
 		</div>
 	</div>
 
-	<script src="/zuwaigani/js/medrec.js" defer></script>
+	<script src="js/medrec.js" defer></script>
+
 </body>
 </html>
