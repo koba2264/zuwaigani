@@ -148,7 +148,7 @@
 					<c:when test="${ medrec.mangList.size() > 0 }">
 						<c:forEach var="mang" items="${ medrec.mangList }">
 		                    <div class="handover-item">
-		                    	<div class="handover-content">${ mang.employee }</div>
+		                    <!-- 	<div class="handover-content">${ mang.employee }</div>  -->
 		                        <div class="handover-meta">
 		                        	${ mang.message }
 		                        </div>
@@ -180,29 +180,20 @@
 					<button class="btn add-button-schedule"
 						onclick="showAddScheduleModal()">追加</button>
 				</div>
-
 				<div class="schedule-list" id="scheduleList">
-					<div class="schedule-item">
-
-						<div class="schedule-time">14:30</div>
-						<div class="schedule-content">リハビリ</div>
-						<div class="schedule-actions">
-							<button class="btn btn-small-schedule"
-								onclick="editSchedule(this)">編集</button>
-							<button class="btn btn-small-schedule btn-danger-schedule"
-								onclick="removeSchedule(this)">削除</button>
+  
+					<c:forEach var="schedule" items="${ medrec.schedules }">
+						<div class="schedule-item">
+							<div class="schedule-time">${ schedule.startTime }</div>
+							<div class="schedule-content">${ schedule.process }</div>
+							<div class="schedule-actions">
+								<button class="btn btn-small-schedule"
+									onclick="editSchedule(this)">編集</button>
+								<button class="btn btn-small-schedule btn-danger-schedule"
+									onclick="removeSchedule(this)">削除</button>
+							</div>
 						</div>
-					</div>
-					<div class="schedule-item">
-						<div class="schedule-time">23:00</div>
-						<div class="schedule-content">就寝介助</div>
-						<div class="schedule-actions">
-							<button class="btn btn-small-schedule"
-								onclick="editSchedule(this)">編集</button>
-							<button class="btn btn-small-schedule btn-danger-schedule"
-								onclick="removeSchedule(this)">削除</button>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<!-- アレルギー表示 -->
@@ -221,12 +212,11 @@
 						id="showAddmeasurementsModal" onclick="showAddmeasurementsModal()">追加</button>
 				</div>
 				<div class="measurements-list">
-					<img src="image/sokutei.png" alt="身体測定" width="100" height="100" />
+					<img src="/zuwaigani/image/sokutei.png" alt="身体測定" width="100" height="100" />
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<!-- 薬追加モーダル -->
 	<div id="addMedicineModal" class="modal">
 		<div class="modal-content">
