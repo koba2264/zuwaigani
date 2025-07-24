@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>従業員情報編集</title>
+<link rel="stylesheet" href="/zuwaigani/css/add.css">
 </head>
 <body>
 <h1>従業員情報更新</h1>

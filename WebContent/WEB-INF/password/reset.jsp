@@ -5,15 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>パスワードリセット確認画面</title>
+<link rel="stylesheet" href="/zuwaigani/css/reset.css">
 </head>
 <body>
-<h1>パスワードリセット</h1>
-<p>大原 太郎さんの</p>
-<p>パスワードをリセットします。</p>
-<div>
-	<input type="submit" value="戻る">
-	<input type="submit" value="確認">
-</div>
-
+<div class="container">
+    <h1>パスワードリセット</h1>
+    <div class="message">
+        <p><span class="user-name">大原 太郎</span>さんの</p>
+        <p>パスワードをリセットします。</p>
+    </div>
+    <div class="button-container">
+        <button onclick="location.href='/zuwaigani/menu.jsp'" class="btn">メニューへ</button>
+        <input type="submit" value="確認" class="btn btn-confirm">
+    </div>
 </body>
 </html>
