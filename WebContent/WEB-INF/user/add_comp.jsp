@@ -10,7 +10,9 @@
 <h1>利用者情報追加</h1>
 <p>利用者情報の追加が完了しました</p>
 <div>
-	<input type="submit" value="メニューへ">
+<form action="../menu.jsp" method="get">
+    <input type="submit" value="メニューへ戻る">
+</form>
 </div>
 
 </body>
