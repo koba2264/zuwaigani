@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -131,8 +132,7 @@
 					<button class="btn add-button-care" id="showAddcareModal"
 						onclick="showAddcareModal()">追加</button>
 				</div>
-				<div id="selectedCareList">
-				</div>
+				<div id="selectedCareList"></div>
 			</div>
 
 			<!-- 申し送り事項 -->
@@ -183,6 +183,7 @@
 
 				<div class="schedule-list" id="scheduleList">
 					<div class="schedule-item">
+
 						<div class="schedule-time">14:30</div>
 						<div class="schedule-content">リハビリ</div>
 						<div class="schedule-actions">
@@ -192,7 +193,16 @@
 								onclick="removeSchedule(this)">削除</button>
 						</div>
 					</div>
-					
+					<div class="schedule-item">
+						<div class="schedule-time">23:00</div>
+						<div class="schedule-content">就寝介助</div>
+						<div class="schedule-actions">
+							<button class="btn btn-small-schedule"
+								onclick="editSchedule(this)">編集</button>
+							<button class="btn btn-small-schedule btn-danger-schedule"
+								onclick="removeSchedule(this)">削除</button>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!-- アレルギー表示 -->
@@ -396,9 +406,6 @@
 			</form>
 		</div>
 	</div>
-
-
-
 	<!-- 注意事項追加/編集モーダル -->
 	<div id="addcareModal" class="modal">
 		<div class="modal-content2" class="modal-content">
@@ -453,7 +460,6 @@
 
 		</div>
 	</div>
-
 	<!-- 介助レベル編集モーダル -->
 	<div id="addlevelModal" class="modal">
 		<div class="modal-content2" class="modal-content">
@@ -487,6 +493,5 @@
 	</div>
 
 	<script src="/zuwaigani/js/medrec.js" defer></script>
-
 </body>
 </html>
