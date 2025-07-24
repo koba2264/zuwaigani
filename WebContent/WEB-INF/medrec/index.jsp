@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -131,8 +132,7 @@
 					<button class="btn add-button-care" id="showAddcareModal"
 						onclick="showAddcareModal()">追加</button>
 				</div>
-				<div id="selectedCareList">
-				</div>
+				<div id="selectedCareList"></div>
 			</div>
 
 			<!-- 申し送り事項 -->
@@ -181,6 +181,7 @@
 						onclick="showAddScheduleModal()">追加</button>
 				</div>
 				<div class="schedule-list" id="scheduleList">
+  
 					<c:forEach var="schedule" items="${ medrec.schedules }">
 						<div class="schedule-item">
 							<div class="schedule-time">${ schedule.startTime }</div>
@@ -395,9 +396,6 @@
 			</form>
 		</div>
 	</div>
-
-
-
 	<!-- 注意事項追加/編集モーダル -->
 	<div id="addcareModal" class="modal">
 		<div class="modal-content2" class="modal-content">
@@ -452,7 +450,6 @@
 
 		</div>
 	</div>
-
 	<!-- 介助レベル編集モーダル -->
 	<div id="addlevelModal" class="modal">
 		<div class="modal-content2" class="modal-content">
@@ -486,6 +483,5 @@
 	</div>
 
 	<script src="/zuwaigani/js/medrec.js" defer></script>
-
 </body>
 </html>

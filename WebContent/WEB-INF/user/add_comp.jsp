@@ -5,13 +5,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>利用者情報追加完了</title>
+<link rel="stylesheet" href="/zuwaigani/css/comp.css">
 </head>
 <body>
-<h1>利用者情報追加</h1>
-<p>利用者情報の追加が完了しました</p>
-<div>
-	<input type="submit" value="メニューへ">
+<div class="container">
+    <div class="main-card">
+        <div class="success-icon"></div>
+        <h1>利用者情報追加完了</h1>
+        <p class="success-message">利用者情報の追加が正常に完了しました。<br>ご登録いただいた情報は安全に保存されています。</p>
+        <div class="button-container">
+             <button onclick="location.href='/zuwaigani/menu.jsp'" class="btn">メニューへ</button>
+            <input type="button" value="利用者一覧を確認" class="btn secondary-btn">
+        </div>
+    </div>
 </div>
+
 
 </body>
 </html>

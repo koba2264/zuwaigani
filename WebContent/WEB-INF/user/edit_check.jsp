@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>利用者情報編集確認</title>
+<link rel="stylesheet" href="/zuwaigani/css/addcheck.css">
 </head>
 <body>
 <h1>利用者情報追加</h1>
