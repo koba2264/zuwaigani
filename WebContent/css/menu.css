@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-    background-color: #f4d7c3;
+    background-color: #fdf1dd;
     font-family: 'Hiragino Sans', 'Yu Gothic', Arial, sans-serif;
     margin: 0;
     min-height: 100vh;
@@ -23,7 +23,7 @@ body {
     gap: 20px;
     justify-content: center;
     align-items: flex-end;
-    padding-left: 100px;
+    padding-left: 20px;
 }
 
 .menu-row {
@@ -32,31 +32,31 @@ body {
 }
 
 .menu-button {
-    background-color: #f4a460;
+    background-color: #f39c12;
     border: none;
     border-radius: 20px;
     width: 300px;
     height:150px;
     font-size: 17px;
     font-weight: bold;
-    color: #333;
+    color: white;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu-button:hover {
-    background-color: #e6935a;
+    background-color: #d2880b;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .menu-button.employee {
-    background-color: #fffacd;
+    background-color: #f8c878;
 }
 
 .menu-button.employee:hover {
-    background-color: #f0f0a8;
+    background-color: #f4ad35;
 }
 
 .right-section {
@@ -75,21 +75,21 @@ body {
 }
 
 .medical-record-button {
-    background-color: #f4a460;
+    background-color: #f39c12;
     border: none;
     border-radius: 20px;
     width: 350px;
     height: 200px;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: white;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .medical-record-button:hover {
-    background-color: #e6935a;
+    background-color: #c57e0a;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
