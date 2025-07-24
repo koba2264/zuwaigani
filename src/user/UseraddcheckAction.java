@@ -3,7 +3,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.User;
-import dao.UserDAO;
 import enu.Gender;
 import enu.Section;
 import tool.Action;
@@ -36,11 +35,11 @@ public class UseraddcheckAction extends Action {
         user.setSpouse(spouse);
         user.setSection(Section.valueOf(section));
 
-        UserDAO dao = new UserDAO();
-        if(dao.updateUser(user)) {
-        	request.setAttribute("user", user);
-        	return "/WEB-INF/user/add_check.jsp";
-        }
-        return "/WEB-INF/user/duplication_error.jsp";
+        request.setAttribute("user", user);
+        return "/WEB-INF/user/add_check.jsp";
+//        UserDAO dao = new UserDAO();
+//        if(dao.updateUser(user)) {
+//        }
+//        return "/WEB-INF/user/duplication_error.jsp";
     }
 }

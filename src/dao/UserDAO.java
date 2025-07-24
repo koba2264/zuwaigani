@@ -93,8 +93,6 @@ public class UserDAO extends DAO {
 		ps.setBoolean(6, user.isEnrollment());
 		ps.setString(7, user.getSection().name());
 		ps.setString(8, user.getId());
-		ps.setString(9, user.getName());
-		ps.setString(10, user.getNamef());
 
 		if (ps.executeUpdate() > 0) {
 			result = true;

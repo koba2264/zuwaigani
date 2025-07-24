@@ -9,6 +9,8 @@
 </head>
 <body>
 <h1>利用者情報追加確認</h1>
+<form action="Useraddcomp.action" method="post">
+
 <h3>こちらの内容でよろしいですか？</h3>
 <table border="1" class="user-addcheck">
 	<tr>
@@ -58,8 +60,8 @@
 </table>
 
 <div>
-	<input type="submit" value="戻る">
-	<input type="submit" value="追加">
+	<input type="submit" name="action" value="戻る">
+	<input type="submit" name="action" value="追加">
 </div>
 
 </body>

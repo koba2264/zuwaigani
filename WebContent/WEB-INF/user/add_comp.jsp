@@ -18,7 +18,6 @@
             <input type="button" value="利用者一覧を確認" class="btn secondary-btn">
         </div>
     </div>
-    
 </div>
 
 

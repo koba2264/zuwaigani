@@ -10,7 +10,12 @@
 <body>
 <h1>利用者情報追加</h1>
 <form action="Useraddcheck.action" method="post">
-	<input type="hidden" name="id" value="${user.id}">
+
+	<div>
+		<label for="id">ID</label>
+		<span>必須</span>
+		<input id="id" type="text" name="id" placeholder="CUST0001" pattern="[\s\S]*" required>
+	</div>
 	<div>
 		<label for="name">名前</label>
 		<span>必須</span>
