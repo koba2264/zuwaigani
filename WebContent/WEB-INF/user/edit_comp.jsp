@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>利用者情報更新完了</title>
 </head>
 <body>
+<h1>利用者情報更新</h1>
+<p>利用者情報の更新が完了しました</p>
+<div>
+	<button onclick="location.href='/zuwaigani/menu.jsp'">メニューへ</button>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,153 @@
+@CHARSET "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* ヘッダー */
+h1 {
+    text-align: center;
+    color: #e67e22;
+    font-size: 28px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f39c12;
+    width: 400px;
+    margin: 0 auto 40px auto;
+}
+
+h3 {
+    text-align: center;
+    color: #d35400;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+/* テーブルスタイル */
+.user-addcheck {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    border: none;
+}
+
+.user-addcheck tr {
+    border-bottom: 1px solid #fdebd0;
+}
+
+.user-addcheck tr:last-child {
+    border-bottom: none;
+}
+
+.user-addcheck td {
+    padding: 15px 20px;
+    border: none;
+    vertical-align: middle;
+}
+
+.user-addcheck td:first-child {
+    background-color: #f39c12;
+    color: white;
+    font-weight: bold;
+    width: 35%;
+    text-align: center;
+}
+
+.user-addcheck td:last-child {
+    background-color: #ffffff;
+    color: #333;
+    padding-left: 25px;
+}
+
+/* 空のセル */
+.user-addcheck td:last-child:empty::before {
+    content: "－";
+    color: #bdc3c7;
+}
+
+/* ボタンコンテナ */
+div {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ボタンスタイル */
+input[type="submit"] {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 100px;
+}
+
+input[type="submit"]:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 戻るボタンは少し薄めの色 */
+input[type="submit"]:first-child {
+    background-color: #f39c12;
+}
+
+input[type="submit"]:first-child:hover {
+    background-color: #e67e22;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .user-addcheck {
+        font-size: 14px;
+    }
+    
+    .user-addcheck td {
+        padding: 12px 15px;
+    }
+    
+    .user-addcheck td:first-child {
+        width: 40%;
+        font-size: 13px;
+    }
+    
+    input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin: 5px;
+    }
+}

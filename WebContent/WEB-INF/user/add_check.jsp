@@ -5,11 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>利用者情報追加確認</title>
+<link rel="stylesheet" href="/zuwaigani/css/addcheck.css">
 </head>
 <body>
-<h1>利用者情報追加</h1>
+<h1>利用者情報追加確認</h1>
 <h3>こちらの内容でよろしいですか？</h3>
-<table border="">
+<table border="1" class="user-addcheck">
 	<tr>
 		<td>名前</td>
 		<td>大原</td>

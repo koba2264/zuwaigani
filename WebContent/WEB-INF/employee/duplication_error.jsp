@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>従業員情報重複エラー</title>
 </head>
 <body>
+<h1>従業員情報追加</h1>
+<p>入力された従業員情報は既に登録されています</p>
+<div>
+	<button onclick="history.back();">戻る</button>
+</div>
 
 </body>
 </html>

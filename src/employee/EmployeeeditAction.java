@@ -3,6 +3,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Employee;
+import enu.Gender;
+import enu.Job;
+import enu.Role;
 import tool.Action;
 
 public class EmployeeeditAction extends Action {
@@ -20,9 +23,9 @@ public class EmployeeeditAction extends Action {
     	em.setName(name);
     	em.setNamef(namef);
     	em.setBirthDay(birthday);
-    	em.setGender(gender);
-    	em.setRole(role);
-    	em.setJob(job);
+    	em.setGender(Gender.valueOf(gender));
+    	em.setRole(Role.valueOf(role));
+    	em.setJob(Job.valueOf(job));
     	em.setSpouse(spouse);
 
 

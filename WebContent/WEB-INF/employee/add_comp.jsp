@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>従業員情報追加完了</title>
 </head>
 <body>
+<h1>従業員情報追加</h1>
+<p>従業員情報の追加が完了しました</p>
+<div>
+	<button onclick="location.href='/zuwaigani/menu.jsp'">メニューへ</button>
+</div>
 
 </body>
 </html>

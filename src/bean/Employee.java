@@ -4,36 +4,34 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+
+import enu.Gender;
+import enu.Job;
+import enu.Role;
 
 public class Employee implements Serializable {
-
+//	従業員番号
 	private String id;
+//	名前
 	private String name;
+//	フリガナ
 	private String namef;
-	private String gender;
-	private String genderId;
-	private Gender gen;
+//	性別
+	private Gender gender;
+//	生年月日
 	private LocalDate birthDay;
-	private String role;
+//	権限
+	private Role role;
+//	配偶者
 	private boolean spouse;
-	private String job;
-	private String jobId;
-	private static Map<String, String> genderMap = new HashMap<String, String>(){
-		{
-			put("01","男性");
-			put("02","女性");
-			put("03","無回答");
-		}
-	};
-	private static Map<String, String> jobMap = new HashMap<String, String>(){
-		{
-			put("01","看護師");
-			put("02","医者");
-			put("03","無回答");
-		}
-	};
+//	職業
+	private Job job;
+//	メッセージ一覧
+	private List<Message> MessageList = new ArrayList<>();
+//	新着メッセージ数
+	private int messageNum;
 
 //	セッター
 	public void setId(String id) {
@@ -43,7 +41,7 @@ public class Employee implements Serializable {
 		this.name = name;
 	}
 	public void setBirthDay(String birthDay) {
-		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+		this.birthDay = LocalDate.parse(birthDay, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	}
 //	sql用
 	public void setBirthDaySql(Date birthDay) {
@@ -53,22 +51,23 @@ public class Employee implements Serializable {
 	public void setNamef(String namef) {
 		this.namef = namef;
 	}
-	public void setGender(String genderId) {
-		this.genderId = genderId;
-		this.gender = Employee.genderMap.get(genderId);
+	public void setJob(Job job) {
+		this.job = job;
 	}
 	public void setSpouse(boolean spouse) {
 		this.spouse = spouse;
 	}
-	public void setJob(String jobId) {
-		this.setJobId(jobId);
-		this.job = Employee.jobMap.get(this.jobId);
-	}
-	private void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
+	}
+	public void setMessageList(List<Message> messageList) {
+		MessageList = messageList;
+	}
+	public void setMessage(Message message) {
+		MessageList.add(message);
+	}
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
 //	ゲッター
@@ -88,30 +87,27 @@ public class Employee implements Serializable {
 	public String getNamef() {
 		return namef;
 	}
-	public String getGenderId() {
-		return genderId;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public String getRole() {
+	public Role getRole() {
 		return role;
 	}
 	public boolean isSpouse() {
 		return spouse;
 	}
-	public String getJob() {
+	public Job getJob() {
 		return job;
 	}
-	public String getJobId() {
-		return jobId;
+	public List<Message> getMessageList() {
+		return MessageList;
 	}
-	public Gender getGen() {
-		return gen;
-	}
-	public void setGen(Gender gen) {
-		this.gen = gen;
+	public Gender getGender() {
+		return gender;
 	}
 
+	public int getMessageNum() {
+		return messageNum;
+	}
+	public void setMessageNum(int messageNum) {
+		this.messageNum = messageNum;
+	}
 }
 

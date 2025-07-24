@@ -11,33 +11,33 @@
     <div class="container">
         <div class="left-section">
             <div class="menu-row">
-                <button class="menu-button" onclick="user/add.jsp">
+                <button class="menu-button" onclick="location.href='user/Useradd.action'">
                     利用者情報登録
                 </button>
-                <button class="menu-button" onclick="handleMenuClick('user-update')">
+                <button class="menu-button" onclick="location.href='user/Userlist.action'">
                     利用者情報更新
                 </button>
             </div>
-            
+
             <div class="menu-row">
-                <button class="menu-button employee" onclick="">
+                <button class="menu-button employee" onclick="location.href='employee/Employeeadd.action'">
                     従業員情報追加
                 </button>
                 <button class="menu-button employee" onclick="">
                     従業員情報更新
                 </button>
             </div>
-            
+
             <div class="menu-row">
                 <button class="menu-button employee" onclick="">
                     従業員<br>パスワードリセット
                 </button>
-                <button class="menu-button employee" onclick="">
+                <button class="menu-button employee" onclick="location.href='message/Messagelist.action'">
                     チャット
                 </button>
             </div>
         </div>
-        
+
         <div class="right-section">
             <img src="image/koba.png" alt="koba" class="logo">
             <button class="medical-record-button" onclick="handleMenuClick('medical-record')">

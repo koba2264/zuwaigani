@@ -2,7 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
-public class Gender implements Serializable {
+public class Allergy implements Serializable {
 	private String id;
 	private String name;
 
