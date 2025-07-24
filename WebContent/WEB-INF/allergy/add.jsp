@@ -4,9 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>診療録編集（アレルギー追加）画面</title>
 </head>
 <body>
+<h1>アレルギー追加</h1>
+<form action=".action" method="post">
+	<div>
+		<label for="allergy">アレルギー</label>
+		<input id="allergy" type="text" name="allergy" pattern="[\s\S]*" required>
+	</div>
+	<div>
+		<input type="submit" value="追加">
+	</div>
+</form>
+<div>
+	<input type="submit" value="戻る">
+</div>
 
 </body>
 </html>

@@ -9,7 +9,8 @@
 </head>
 <body>
 <h1>利用者情報追加</h1>
-<form action=".action" method="post">
+<form action="Useraddcheck.action" method="post">
+	<input type="hidden" name="id" value="${user.id}">
 	<div>
 		<label for="name">名前</label>
 		<span>必須</span>
@@ -23,10 +24,12 @@
 	<div>
 		<label>性別</label>
 		<span>必須</span>
-		<input id="man" type="radio" name="gender" value="man" required>
-		<label for="man">男</label>
-		<input id="weman" type="radio" name="gender" value="weman">
-		<label for="weman">女</label>
+		<input id="MALE" type="radio" name="gender" value="MALE" required>
+		<label for="MALE">男</label>
+		<input id="FEMALE" type="radio" name="gender" value="FEMALE">
+		<label for="FEMALE">女</label>
+		<input id="NO" type="radio" name="gender" value="NO">
+		<label for="NO">無回答</label>
 	</div>
 	<div>
 		<label>血液型</label>
@@ -75,10 +78,10 @@
 	<div>
 		<label>区分</label>
 		<span>必須</span>
-		<input id="home" type="radio" name="section" value="home" required>
-		<label for="home">入居</label>
-		<input id="day" type="radio" name="section" value="day">
-		<label for="day">デイサービス</label>
+		<input id="MOVEIN" type="radio" name="section" value="MOVEIN" required>
+		<label for="MOVEIN">入居</label>
+		<input id="DAYSERVICE" type="radio" name="section" value="DAYSERVICE">
+		<label for="DAYSERVICE">デイサービス</label>
 	</div>
 	<div>
 		<input type="submit" value="確定">

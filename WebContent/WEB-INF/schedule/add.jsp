@@ -4,9 +4,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>スケジュール追加画面</title>
 </head>
 <body>
+<form action=".action" method="post">
+	<div>
+		<label for="time">日時:</label>
+		<input type="time" id="time" name="time" required />
+	</div>
+	<div>
+		<label for="process-select">内容:</label>
+		<select id="process-select" name="process" required>
+			<option value="reha">リハビリ</option>
+			<option value="toilet">排泄介助</option>
+			<option value="meal">食事介助</option>
+		</select>
+	</div>
+	<div>
+		<input type="submit" value="追加">
+	</div>
+</form>
+<div>
+	<input type="submit" value="戻る">
+</div>
 
 </body>
 </html>

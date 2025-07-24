@@ -4,9 +4,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>処方箋一覧画面</title>
 </head>
 <body>
+<table border="" class="styled-table">
+	<tr>
+		<th>薬名</th>
+		<th>投薬</th>
+		<th>薬量</th>
+	</tr>
 
+	<tr>
+		<td>ビタミンB複合剤</td>
+		<td>食後</td>
+		<td>1錠</td>
+		<td><input type="submit" value="削除"></td>
+		<td><input type="submit" value="編集"></td>
+	</tr>
+	<tr>
+		<td>アムロナミエ剤</td>
+		<td>いつでも</td>
+		<td>1袋</td>
+		<td><input type="submit" value="削除"></td>
+		<td><input type="submit" value="編集"></td>
+	</tr>
+
+</table>
+
+<div>
+	<input type="submit" value="戻る">
+	<input type="submit" value="追加">
+</div>
 </body>
 </html>

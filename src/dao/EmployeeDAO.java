@@ -99,6 +99,7 @@ public class EmployeeDAO extends DAO {
 			em.setJob(Job.valueOf(rs.getString("JOB")));
 			em.setSpouse(rs.getBoolean("SPOUSE"));
 			messageList = dao.getMessageList(id, em.getId());
+			em.setMessageList(messageList);
 			em.setMessageNum(messageList.stream().filter(message -> !message.isMine() && !message.isLooked()).collect(Collectors.toList()).size());
 			employeeList.add(em);
 		}

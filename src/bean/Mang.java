@@ -5,12 +5,12 @@ import java.io.Serializable;
 //申し送り事項
 public class Mang implements Serializable {
 //	記入者
-	private Employee employee;
+	private String employee;
 //	内容
 	private String message;
 
 //	ゲッター
-	public Employee getEmployee() {
+	public String getEmployee() {
 		return employee;
 	}
 	public String getMessage() {
@@ -18,7 +18,7 @@ public class Mang implements Serializable {
 	}
 
 //	セッター
-	public void setEmployee(Employee employee) {
+	public void setEmployee(String employee) {
 		this.employee = employee;
 	}
 	public void setMessage(String message) {

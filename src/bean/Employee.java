@@ -29,9 +29,11 @@ public class Employee implements Serializable {
 //	職業
 	private Job job;
 //	メッセージ一覧
-	private List<Message> MessageList = new ArrayList<>();
+	private List<Message> messageList = new ArrayList<>();
 //	新着メッセージ数
 	private int messageNum;
+//	最後のメッセージ
+	private Message lastMessage = null;
 
 //	セッター
 	public void setId(String id) {
@@ -61,10 +63,13 @@ public class Employee implements Serializable {
 		this.role = role;
 	}
 	public void setMessageList(List<Message> messageList) {
-		MessageList = messageList;
+		this.messageList = messageList;
+		if (this.messageList.size() > 0) {
+			this.setLastMessage(this.messageList.get(this.messageList.size() - 1));
+		}
 	}
 	public void setMessage(Message message) {
-		MessageList.add(message);
+		messageList.add(message);
 	}
 	public void setGender(Gender gender) {
 		this.gender = gender;
@@ -97,7 +102,7 @@ public class Employee implements Serializable {
 		return job;
 	}
 	public List<Message> getMessageList() {
-		return MessageList;
+		return messageList;
 	}
 	public Gender getGender() {
 		return gender;
@@ -108,6 +113,12 @@ public class Employee implements Serializable {
 	}
 	public void setMessageNum(int messageNum) {
 		this.messageNum = messageNum;
+	}
+	public Message getLastMessage() {
+		return lastMessage;
+	}
+	private void setLastMessage(Message lastMessage) {
+		this.lastMessage = lastMessage;
 	}
 }
 

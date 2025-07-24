@@ -9,7 +9,7 @@ public class Drag implements Serializable {
 //	薬名
 	private String name;
 //	タイミング
-	private Timing Timing;
+	private Timing timing;
 //	量
 	private int amount;
 
@@ -18,7 +18,7 @@ public class Drag implements Serializable {
 		return name;
 	}
 	public Timing getTiming() {
-		return Timing;
+		return timing;
 	}
 	public int getAmount() {
 		return amount;
@@ -29,7 +29,7 @@ public class Drag implements Serializable {
 		this.name = name;
 	}
 	public void setTiming(Timing timing) {
-		Timing = timing;
+		this.timing = timing;
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
