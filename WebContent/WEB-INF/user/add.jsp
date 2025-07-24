@@ -10,6 +10,7 @@
 <body>
 <h1>利用者情報追加</h1>
 <form action="Useraddcheck.action" method="post">
+	<input type="hidden" name="id" value="${user.id}">
 	<div>
 		<label for="name">名前</label>
 		<span>必須</span>
