@@ -83,6 +83,7 @@
 .sidebar {
 	width: 15%;
 	height: 100%;
+	width:19vh;
 	background-color: #f39c12;
 	color: white;
 }
@@ -146,46 +147,46 @@
   </div>
 </div>
 
-<div class="main">
+
 
 <div class="container">
-<div class="sidebar">
-	<div class="sideber-menu-box">
-		<a href="">
-			<i class="fas fa-home"></i>
-			<p>HOME</p>
-		</a>
+	<div class="sidebar">
+		<div class="sideber-menu-box">
+			<a href="">
+				<i class="fas fa-home"></i>
+				<p>HOME</p>
+			</a>
+		</div>
+		<div class="sideber-menu-box">
+			<a href="">
+				<i class="fas fa-user"></i>
+				<p>USER</p>
+			</a>
+		</div>
+		<div class="sideber-menu-box">
+			<a href="">
+				<i class="fas fa-arrow-alt-circle-down"></i>
+				<p>DOWNLOAD</p>
+			</a>
+		</div>
+		<div class="sideber-menu-box">
+			<a href="">
+				<i class="fas fa-id-badge"></i>
+				<p>EMPLOYEE</p>
+			</a>
+		</div>
+		<div class="sideber-menu-box">
+			<a href="">
+				<i class="fas fa-comments"></i>
+				<p>MESSAGE</p>
+			</a>
+		</div>
+		<div class="sideber-menu-box">
+			<a href="">
+				<i class="fas fa-calendar-alt"></i>
+				<p>CALENDAR</p>
+			</a>
+		</div>
 	</div>
-	<div class="sideber-menu-box">
-		<a href="">
-			<i class="fas fa-user"></i>
-			<p>USER</p>
-		</a>
-	</div>
-	<div class="sideber-menu-box">
-		<a href="">
-			<i class="fas fa-arrow-alt-circle-down"></i>
-			<p>DOWNLOAD</p>
-		</a>
-	</div>
-	<div class="sideber-menu-box">
-		<a href="">
-			<i class="fas fa-id-badge"></i>
-			<p>EMPLOYEE</p>
-		</a>
-	</div>
-	<div class="sideber-menu-box">
-		<a href="">
-			<i class="fas fa-comments"></i>
-			<p>MESSAGE</p>
-		</a>
-	</div>
-	<div class="sideber-menu-box">
-		<a href="">
-			<i class="fas fa-calendar-alt"></i>
-			<p>CALENDAR</p>
-		</a>
-	</div>
-</div>
 
-<div class="content">
+<!--<div class="content">-->
