@@ -83,11 +83,23 @@ $(function() {
 
     ws.onmessage = function(receive) {
         console.log(receive.data);
+        if (receive.data == 'Open') {
+        	console.log(ws.readyState);
+        	const data = {
+        			type: "Open",
+        			myId: MyId
+        	}
+        	ws.send(JSON.stringify(data));
+        }
+        const text = document.getElementById('send-text').value = receive.data;
     };
 
     ws.onopen = function() {
-        console.log("接続");
-        ws.send(MyId);
+    	const data = {
+    			type: "Open",
+    			myId: MyId
+    	}
+    	ws.send(JSON.stringify(data));
     };
 
     const ChatInputElm = document.querySelector('.chat-input-area');
@@ -117,8 +129,16 @@ $(function() {
 				message.classList.add('message','self');
 				const chatAreaElm = document.querySelector('.chat-messages');
 				chatAreaElm.appendChild(message);
-    			console.log(data);
     			chatAreaElm.scrollTop = chatAreaElm.scrollHeight;
+    			ws.close();
+    		    ws.onopen = function() {
+    		    	const send = {
+    		    			type: "Send",
+    		    			myId: MyId,
+    		    			sendId: selectId
+    		    	}
+    		    	ws.send(JSON.stringify(data));
+    		    };
     		})
     	}
     }
