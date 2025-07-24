@@ -78,6 +78,9 @@ public class UserDAO extends DAO {
 
 //	更新
 	public boolean updateUser(User user) throws Exception {
+		if (user.getId() == null || user.getId().isEmpty()) {
+		    throw new IllegalArgumentException("更新対象IDが未設定です");
+		}
 		boolean result = false;
 
 		Connection con = getConnection();
@@ -90,6 +93,8 @@ public class UserDAO extends DAO {
 		ps.setBoolean(6, user.isEnrollment());
 		ps.setString(7, user.getSection().name());
 		ps.setString(8, user.getId());
+		ps.setString(9, user.getName());
+		ps.setString(10, user.getNamef());
 
 		if (ps.executeUpdate() > 0) {
 			result = true;
@@ -100,13 +105,4 @@ public class UserDAO extends DAO {
 
 		return result;
 	}
-
-
-
-
-
-
-
-
-
 }

@@ -10,7 +10,9 @@
 <h1>利用者情報追加</h1>
 <p>入力された利用者情報は既に登録されています</p>
 <div>
-	<input type="submit" value="戻る">
+<form action="../menu.jsp" method="get">
+    <input type="submit" value="メニューへ戻る">
+</form>
 </div>
 
 </body>
