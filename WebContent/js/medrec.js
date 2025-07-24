@@ -9,8 +9,8 @@ function updateDateTime() {
             const day = String(now.getDate()).padStart(2, '0');
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
-            
-            document.getElementById('datetime').textContent = `${year}.${month}.${day} ${hours}:${minutes}`;
+
+            document.getElementById('datetime').innerHTML = `${year}.${month}.${day} ${hours}:${minutes}`;
         }
 
         // 1秒ごとに時刻を更新
@@ -38,7 +38,7 @@ function updateDateTime() {
             if (checkbox.checked) {
                 const now = new Date();
                 const timestamp = now.toLocaleString('ja-JP');
-                
+
                 medicineHistory.push({
                     name: medicineName,
                     time: time,
@@ -47,7 +47,7 @@ function updateDateTime() {
 
                 // チェックボックスを無効にする
                 checkbox.disabled = true;
-                
+
                 alert(`${medicineName}(${time})の服薬を記録しました。`);
             }
         }
@@ -109,7 +109,7 @@ function updateDateTime() {
             document.getElementById('scheduleContent').value = content;
             document.getElementById('scheduleModalTitle').textContent = 'スケジュール編集';
             document.getElementById('scheduleSubmitBtn').textContent = '更新';
-            
+
             editingScheduleItem = scheduleItem;
             document.getElementById('addScheduleModal').style.display = 'block';
         }
@@ -124,11 +124,11 @@ function updateDateTime() {
         // 薬追加フォーム送信
         document.getElementById('addMedicineForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('medicineName').value;
             const dose = document.getElementById('medicineDose').value;
             const time = document.getElementById('medicineTime').value;
-            
+
             const medicineItem = document.createElement('div');
             medicineItem.className = 'medicine-item';
             medicineItem.innerHTML = `
@@ -141,7 +141,7 @@ function updateDateTime() {
                     <button class="btn btn-small btn-danger" onclick="removeMedicine(this)">削除</button>
                 </div>
             `;
-            
+
             document.getElementById(time).appendChild(medicineItem);
             closeModal('addMedicineModal');
             this.reset();
@@ -150,10 +150,10 @@ function updateDateTime() {
         // スケジュール追加/編集フォーム送信
         document.getElementById('addScheduleForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const time = document.getElementById('scheduleTime').value;
             const content = document.getElementById('scheduleContent').value;
-            
+
             if (editingScheduleItem) {
                 // 編集モード
                 editingScheduleItem.querySelector('.schedule-time').textContent = time;
@@ -170,11 +170,11 @@ function updateDateTime() {
                         <button class="btn btn-small btn-danger" onclick="removeSchedule(this)">削除</button>
                     </div>
                 `;
-                
+
                 // 時間順にソートして挿入
                 const scheduleList = document.getElementById('scheduleList');
                 const scheduleItems = Array.from(scheduleList.children);
-                
+
                 let inserted = false;
                 for (let i = 0; i < scheduleItems.length; i++) {
                     const existingTime = scheduleItems[i].querySelector('.schedule-time').textContent;
@@ -184,12 +184,12 @@ function updateDateTime() {
                         break;
                     }
                 }
-                
+
                 if (!inserted) {
                     scheduleList.appendChild(scheduleItem);
                 }
             }
-            
+
             closeModal('addScheduleModal');
             this.reset();
         });
@@ -202,7 +202,7 @@ function updateDateTime() {
                 }
             });
         });
-        
+
      // モーダル関連の関数
         function openAddModal() {
             document.getElementById('addModal').style.display = 'block';
@@ -238,7 +238,7 @@ function updateDateTime() {
         // フォーム送信処理
         document.getElementById('addHandoverForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const content = document.getElementById('handoverContent').value.trim();
             if (!content) {
                 alert('申し送り内容を入力してください。');
@@ -297,7 +297,7 @@ function updateDateTime() {
             })
             .catch(error => {
                 console.error('Error:', error);
-                document.getElementById('latestHandover').innerHTML = 
+                document.getElementById('latestHandover').innerHTML =
                     '<div class="no-handover">データの読み込みに失敗しました</div>';
             });
         }
@@ -328,7 +328,7 @@ function updateDateTime() {
             })
             .catch(error => {
                 console.error('Error:', error);
-                document.getElementById('historyList').innerHTML = 
+                document.getElementById('historyList').innerHTML =
                     '<div style="text-align: center; color: #999;">データの読み込みに失敗しました</div>';
             });
         }
@@ -344,12 +344,12 @@ function updateDateTime() {
         document.addEventListener('DOMContentLoaded', function() {
             loadLatestHandover();
         });
-        
+
         // 病歴モーダル
         function closehistoryModal(id) {
           document.getElementById(id).style.display = 'none';
         }
-        
+
         function showAddhistoryModal() {
         	  const modal = document.getElementById('addhistoryModal');
         	  if (modal) {
@@ -358,7 +358,7 @@ function updateDateTime() {
         	}
 
 
-        
+
         const showAddhistoryModalBtn = document.getElementById('showAddhistoryModal');
         const closehistoryModalBtn = document.getElementById('closehistoryModal');
         const addhistoryModal = document.getElementById('addhistoryModal');
@@ -384,7 +384,7 @@ function updateDateTime() {
         function closeallergyModal(id) {
           document.getElementById(id).style.display = 'none';
         }
-        
+
         function showAddallergyModal() {
         	  const modal = document.getElementById('addallergyModal');
         	  if (modal) {
@@ -393,7 +393,7 @@ function updateDateTime() {
         	}
 
 
-        
+
         const showAddallergyModalBtn = document.getElementById('showAddallergyModal');
         const closeallergyModalBtn = document.getElementById('closeallergyModal');
         const addallergyModal = document.getElementById('addallergyModal');
@@ -419,7 +419,7 @@ function updateDateTime() {
         function closemeasurementsModal(id) {
           document.getElementById(id).style.display = 'none';
         }
-        
+
         function showAddmeasurementsModal() {
         	  const modal = document.getElementById('addmeasurementsModal');
         	  if (modal) {
@@ -428,7 +428,7 @@ function updateDateTime() {
         	}
 
 
-        
+
         const showAddmeasurementsModalBtn = document.getElementById('showAddmeasurementsModal');
         const closemeasurementsModalBtn = document.getElementById('closemeasurementsModal');
         const addmeasurementsModal = document.getElementById('addmeasurementsModal');
@@ -454,7 +454,7 @@ function updateDateTime() {
         function closecareModal(id) {
             document.getElementById(id).style.display = 'none';
           }
-          
+
           function showAddcareModal() {
           	  const modal = document.getElementById('addcareModal');
           	  if (modal) {
@@ -463,7 +463,7 @@ function updateDateTime() {
           	}
 
 
-          
+
           const showAddcareModalBtn = document.getElementById('showAddcareModal');
           const closecareModalBtn = document.getElementById('closecareModal');
           const addcareModal = document.getElementById('addcareModal');
@@ -484,7 +484,7 @@ function updateDateTime() {
               addcareModal.style.display = 'none';
             }
           });
-        
+
         document.addEventListener('DOMContentLoaded', () => {
         	  const form = document.getElementById('careForm');
         	  const list = document.getElementById('selectedCareList');
@@ -507,8 +507,8 @@ function updateDateTime() {
         	});
 
 //介助レベル
-        
-          
+
+
           function showAddlevelModal() {
           	  const modal = document.getElementById('addlevelModal');
           	  if (modal) {
@@ -517,7 +517,7 @@ function updateDateTime() {
           	}
 
 
-          
+
           const showAddlevelModalBtn = document.getElementById('showAddlevelModal');
           const addlevelModal = document.getElementById('addlevelModal');
 
@@ -526,8 +526,8 @@ function updateDateTime() {
             addlevelModal.style.display = 'block';
           });
 
-         
-        
+
+
         //ボックスクリックで保存
         document.querySelectorAll('#addlevelModal .modalabel-content')
         .forEach(el => {
