@@ -176,44 +176,60 @@ function updateDateTime() {
             const time = document.getElementById('scheduleTime').value;
             const content = document.getElementById('scheduleContent').value;
 
-            if (editingScheduleItem) {
-                // 編集モード
-                editingScheduleItem.querySelector('.schedule-time').textContent = time;
-                editingScheduleItem.querySelector('.schedule-content').textContent = content;
-            } else {
-                // 追加モード
-                const scheduleItem = document.createElement('div');
-                scheduleItem.className = 'schedule-item';
-                scheduleItem.innerHTML = `
-                    <div class="schedule-time">${time}</div>
-                    <div class="schedule-content">${content}</div>
-                    <div class="schedule-actions">
-                        <button class="btn btn-small" onclick="editSchedule(this)">編集</button>
-                        <button class="btn btn-small btn-danger" onclick="removeSchedule(this)">削除</button>
-                    </div>
-                `;
-
-                // 時間順にソートして挿入
-                const scheduleList = document.getElementById('scheduleList');
-                const scheduleItems = Array.from(scheduleList.children);
-
-                let inserted = false;
-                for (let i = 0; i < scheduleItems.length; i++) {
-                    const existingTime = scheduleItems[i].querySelector('.schedule-time').textContent;
-                    if (time < existingTime) {
-                        scheduleList.insertBefore(scheduleItem, scheduleItems[i]);
-                        inserted = true;
-                        break;
-                    }
-                }
-
-                if (!inserted) {
-                    scheduleList.appendChild(scheduleItem);
-                }
-            }
+            fetch('/zuwaigani/addSchedule',{
+            	method: 'POST',
+            	headers: {
+            		'Content-Type': 'application/json'
+            	},
+            	body: JSON.stringify({
+            		userId: userId,
+            		time: time,
+            		content: content
+            	})
+            }).then(response => response.json()).then(data => {
+            	console.log(data);
+            }).catch(error => {
+            	console.error('エラー',error);
+            })
 
             closeModal('addScheduleModal');
             this.reset();
+
+//            if (editingScheduleItem) {
+//                // 編集モード
+//                editingScheduleItem.querySelector('.schedule-time').textContent = time;
+//                editingScheduleItem.querySelector('.schedule-content').textContent = content;
+//            } else {
+//                // 追加モード
+//                const scheduleItem = document.createElement('div');
+//                scheduleItem.className = 'schedule-item';
+//                scheduleItem.innerHTML = `
+//                    <div class="schedule-time">${time}</div>
+//                    <div class="schedule-content">${content}</div>
+//                    <div class="schedule-actions">
+//                        <button class="btn btn-small" onclick="editSchedule(this)">編集</button>
+//                        <button class="btn btn-small btn-danger" onclick="removeSchedule(this)">削除</button>
+//                    </div>
+//                `;
+//
+//                // 時間順にソートして挿入
+//                const scheduleList = document.getElementById('scheduleList');
+//                const scheduleItems = Array.from(scheduleList.children);
+//
+//                let inserted = false;
+//                for (let i = 0; i < scheduleItems.length; i++) {
+//                    const existingTime = scheduleItems[i].querySelector('.schedule-time').textContent;
+//                    if (time < existingTime) {
+//                        scheduleList.insertBefore(scheduleItem, scheduleItems[i]);
+//                        inserted = true;
+//                        break;
+//                    }
+//                }
+//
+//                if (!inserted) {
+//                    scheduleList.appendChild(scheduleItem);
+//                }
+//            }
         });
 
         // モーダルの外側をクリックして閉じる

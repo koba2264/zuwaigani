@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Schedule;
+import medrec.AddSchedule.sendSchedule;
 
 public class ScheduleDAO extends DAO {
 	public List<Schedule> getMangList(String userId) throws Exception{
@@ -27,5 +28,18 @@ public class ScheduleDAO extends DAO {
 		ps.close();
 		con.close();
 		return result;
+	}
+
+	public void addSchedule(sendSchedule schedule) throws Exception{
+		Connection con = getConnection();
+		PreparedStatement ps = con.prepareStatement("INSERT INTO SCHEDULE (USER_ID, START_TIME, PROCESS) VALUES (?, ?, ?);");
+		ps.setString(1, schedule.userId);
+		ps.setTime(2, java.sql.Time.valueOf(LocalTime.parse(schedule.time)));
+		ps.setString(3, schedule.content);
+
+		ps.executeUpdate();
+
+		ps.close();
+		con.close();
 	}
 }
