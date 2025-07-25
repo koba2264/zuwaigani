@@ -13,7 +13,13 @@ public class UseraddcheckAction extends Action {
     	String id = request.getParameter("id");
         String name = request.getParameter("name");
         String namef = request.getParameter("namef");
-        String gender = request.getParameter("gender");
+        String genderParam = request.getParameter("gender");
+        Gender gender;
+        if (genderParam != null) {
+            gender = Gender.valueOf(genderParam);
+        } else {
+            gender = Gender.FEMALE;
+        }
         String birthday = request.getParameter("birthday");
         String number = request.getParameter("number");
         String address = request.getParameter("address");
@@ -26,7 +32,7 @@ public class UseraddcheckAction extends Action {
         user.setId(id);
         user.setName(name);
         user.setNamef(namef);
-        user.setGender(Gender.valueOf(gender));
+        user.setGender(gender);
         user.setBirthDay(birthday);
         user.setNumber(number);
         user.setAddress(address);

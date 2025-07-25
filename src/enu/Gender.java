@@ -12,4 +12,11 @@ public enum Gender {
     public String getName(){
     	return name;
     }
+    public static Gender from(String value) {
+        try {
+            return Gender.valueOf(value);
+        } catch (Exception e) {
+            return Gender.FEMALE;
+        }
+    }
 }

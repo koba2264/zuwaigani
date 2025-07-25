@@ -20,7 +20,7 @@ public class User implements Serializable {
 //	生年月日
 	private LocalDate birthDay;
 //	血液型
-	private String bloodType;
+	private String blood;
 //	電話番号
 	private String number;
 //	住所
@@ -84,8 +84,8 @@ public class User implements Serializable {
 	public Gender getGender() {
 		return gender;
 	}
-	public String getBloodType() {
-		return bloodType;
+	public String getBlood() {
+		return blood;
 	}
 
 
@@ -143,7 +143,7 @@ public class User implements Serializable {
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
-	public void setBloodType(String bloodType) {
-		this.bloodType = bloodType;
+	public void setBlood(String blood) {
+		this.blood = blood;
 	}
 }

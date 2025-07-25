@@ -12,7 +12,19 @@ import enu.Gender;
 import enu.Section;
 
 public class UserDAO extends DAO {
-//	一覧取得
+//	IDの重複チェック
+		public boolean checkDuplication(User user) throws Exception {
+			Connection con = getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM USER WHERE USER.ID = ?;");
+			ps.setString(1, user.getId());
+			ResultSet rs = ps.executeQuery();
+
+			boolean result = !rs.next();
+
+			return result;
+		}
+
+//	メッセージ用一覧取得
 	public List<User> getUserList() throws Exception {
 		List<User> userList = new ArrayList<>();
 		Connection con = getConnection();
@@ -35,7 +47,7 @@ public class UserDAO extends DAO {
 			user.setEnrollment(rs.getBoolean("ENROLLMENT"));
 			user.setSection(Section.valueOf(rs.getString("SECTION")));
 			user.setDay(rs.getObject("DAY", LocalDate.class));
-			user.setBloodType(rs.getString("BLOOD"));
+			user.setBlood(rs.getString("BLOOD"));
 			userList.add(user);
 		}
 
@@ -44,6 +56,7 @@ public class UserDAO extends DAO {
 
 		return userList;
 	}
+
 //	idで1件取得
 	public User getUser(String id) throws Exception {
 		Connection con = getConnection();
@@ -67,7 +80,7 @@ public class UserDAO extends DAO {
 			user.setEnrollment(rs.getBoolean("ENROLLMENT"));
 			user.setSection(Section.valueOf(rs.getString("SECTION")));
 			user.setDay(rs.getObject("DAY", LocalDate.class));
-			user.setBloodType(rs.getString("BLOOD"));
+			user.setBlood(rs.getString("BLOOD"));
 		}
 
 		ps.close();
@@ -78,9 +91,6 @@ public class UserDAO extends DAO {
 
 //	更新
 	public boolean updateUser(User user) throws Exception {
-		if (user.getId() == null || user.getId().isEmpty()) {
-		    throw new IllegalArgumentException("更新対象IDが未設定です");
-		}
 		boolean result = false;
 
 		Connection con = getConnection();
