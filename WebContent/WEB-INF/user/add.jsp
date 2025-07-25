@@ -89,8 +89,8 @@
 		<label for="DAYSERVICE">デイサービス</label>
 	</div>
 	 <div class="button-container">
-             <button onclick="location.href='/zuwaigani/menu.jsp'" class="btn">メニューへ</button>
            <input type="submit" value="確定">
+             <button onclick="location.href='/zuwaigani/menu.jsp'" class="btn">メニューへ</button>
         </div>
 </form>
 
