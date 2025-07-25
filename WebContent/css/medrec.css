@@ -22,6 +22,19 @@ body {
 	font-family: sans-serif;
 	padding: 5px;
 }
+.measurements-list {
+	display: flex;
+}
+.medical-history-item {
+	display: flex;
+}
+#selectedCareList {
+	display: flex; /* Flexboxを有効化 */
+	justify-content: center; /* 主軸（横方向）で中央揃え */
+	align-items: center;
+	gap: 20px;
+	margin-top: 20px;
+}
 
 .header-top {
 	display: flex;
@@ -129,7 +142,7 @@ body {
 	font-size: 20px;      /* サイズを調整 */
   color: #ff9766;        /* 色を変更 */
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);  /* 軽い影を追加 */
-	
+
 }
 
 .main-content-above {
@@ -462,6 +475,20 @@ body {
 	margin-top: 5px;
 	width:100px;
 	height:100px;
+}
+.care-img-content {
+	display: flex;
+	flex-direction: column; /* 縦に並べる */
+	align-items: center; /* 横方向の中央揃え */
+	justify-content: center; /* 縦方向の中央揃え（必要なら） */
+	height: 100%; /* 必要に応じて高さ指定 */
+	text-align: center;
+	gap: 0px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	border: 2px solid #ffcc99;
+	margin-top: 5px;
+	width:80px;
+	height:80px;
 }
 
 .label-text {

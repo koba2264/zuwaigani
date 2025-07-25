@@ -55,14 +55,14 @@ public class MedrecDAO extends DAO {
 			DragDAO ddao = new DragDAO();
 			List<Drag> morningDrag = ddao.getDragList(userId, "MORNING");
 			medrec.setMorningDrag(morningDrag);
+			System.out.println(medrec.getMorningDrag().size());
 			List<Drag> noonDrag = ddao.getDragList(userId, "NOON");
-			medrec.setMorningDrag(noonDrag);
+			medrec.setNoonDrag(noonDrag);
 			List<Drag> nightDrag = ddao.getDragList(userId, "NIGHT");
-			medrec.setMorningDrag(nightDrag);
+			medrec.setNightDrag(nightDrag);
 		}
 		ps.close();
 		con.close();
-
 		return medrec;
 	}
 }
