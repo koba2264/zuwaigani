@@ -15,6 +15,7 @@
   crossorigin="anonymous">
 </head>
 <body>
+	<div id="userId" data-name="${ medrec.user.id }"></div>
 	<div class="container">
 		<!-- ヘッダー -->
 		<div class="header">
@@ -38,7 +39,16 @@
 					</div>
 				</div>
 				<div class="level-block" id="showAddlevelModal" onclick="showAddlevelModal()">
-					<div class="level-label">${ medrec.level }</div>
+					<div class="level-label">
+					<c:choose>
+						<c:when test='${ medrec.level.equals("01") }'>Ⅰ</c:when>
+						<c:when test='${ medrec.level.equals("02") }'>Ⅱ</c:when>
+						<c:when test='${ medrec.level.equals("03") }'>Ⅲ</c:when>
+						<c:when test='${ medrec.level.equals("04") }'>Ⅳ</c:when>
+						<c:when test='${ medrec.level.equals("05") }'>Ⅴ</c:when>
+					</c:choose>
+
+					</div>
 					<div class="level-label">介助レベル</div>
 				</div>
 				<div class="datetime-block">
@@ -132,7 +142,50 @@
 					<button class="btn add-button-care" id="showAddcareModal"
 						onclick="showAddcareModal()">追加</button>
 				</div>
-				<div id="selectedCareList"></div>
+				<div id="selectedCareList">
+					<c:if test="${ medrec.careful.walk }">
+						<div class="care-img-content">
+							<img src="/zuwaigani/image/work.png" alt="歩行介助" width="40" height="40" /> <label
+								class="label-text">歩行介助</label>
+						</div>
+					</c:if>
+					<c:if test="${ medrec.careful.eat }">
+						<div class="care-img-content">
+							<img src="/zuwaigani/image/eat.png" alt="食事介助" width="40" height="40" /> <label
+								class="label-text">食事介助</label>
+						</div>
+					</c:if>
+					<c:if test="${ medrec.careful.bath }">
+						<div class="care-img-content">
+							<img src="/zuwaigani/image/wash.png" alt="入浴介助" width="40" height="40" /> <label
+								class="label-text"> 入浴介助</label>
+						</div>
+					</c:if>
+					<c:if test="${ medrec.careful.sleep }">
+						<div class="care-img-content">
+							<img src="/zuwaigani/image/bed.png" alt="褥瘡介助" width="40" height="40" /> <label
+								class="label-text">褥瘡介助</label>
+						</div>
+					</c:if>
+					<c:if test="${ medrec.careful.drag }">
+						<div class="care-img-content">
+							<img src="/zuwaigani/image/drag.png" alt="服薬介助" width="40" height="40" /> <label
+								class="label-text">服薬介助</label>
+						</div>
+					</c:if>
+					<c:if test="${ medrec.careful.toilet }">
+						<div class="care-img-content">
+							<img src="/zuwaigani/image/toire.png" alt="排泄介助" width="40" height="40" /> <label
+								class="label-text">排泄介助</label>
+						</div>
+					</c:if>
+					<c:if test="${ medrec.careful.wcar }">
+						<div class="care-img-content">
+							<img src="/zuwaigani/image/car.png" alt="車椅子介助" width="40" height="40" /> <label
+								class="label-text">車椅子介助</label>
+						</div>
+					</c:if>
+				</div>
 			</div>
 
 			<!-- 申し送り事項 -->
@@ -150,7 +203,7 @@
 		                    <div class="handover-item">
 		                    <!-- 	<div class="handover-content">${ mang.employee }</div>  -->
 		                        <div class="handover-meta">
-		                        	${ mang.message }
+		                        	・${ mang.message }
 		                        </div>
 		                 	</div>
 						</c:forEach>
@@ -171,6 +224,13 @@
 					<button class="btn add-button-schedule" id="showAddhistoryModal"
 						onclick="showAddhistoryModal()">追加</button>
 				</div>
+				<div class="medical-history-value">
+				<c:forEach var="medhis" items="${ medrec.medhisList }">
+					<div class="medical-history-item">
+						${ medhis.name }/${ medhis.age }/${ medhis.state.getName() }
+					</div>
+				</c:forEach>
+				</div>
 			</div>
 
 			<!-- スケジュールセクション -->
@@ -181,7 +241,7 @@
 						onclick="showAddScheduleModal()">追加</button>
 				</div>
 				<div class="schedule-list" id="scheduleList">
-  
+
 					<c:forEach var="schedule" items="${ medrec.schedules }">
 						<div class="schedule-item">
 							<div class="schedule-time">${ schedule.startTime }</div>
@@ -203,6 +263,13 @@
 					<button class="btn add-button-schedule" id="showAddallergyModal"
 						onclick="showAddallergyModal()">追加</button>
 				</div>
+				<div class="allergy-value">
+					<ul>
+					<c:forEach var="allergy" items="${ medrec.allergyList }">
+						<li>${ allergy.name }</li>
+					</c:forEach>
+					</ul>
+				</div>
 			</div>
 			<!-- 身体測定 -->
 			<div class="section-measurements">
@@ -213,6 +280,13 @@
 				</div>
 				<div class="measurements-list">
 					<img src="/zuwaigani/image/sokutei.png" alt="身体測定" width="100" height="100" />
+					<div class="measurements-value">
+						<ul>
+							<li class="height">身長: ${ medrec.height }</li>
+							<li class="weight">体重: ${ medrec.weight }</li>
+							<li class="blood-pres">血圧: ${ medrec.bloodPres }</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -227,7 +301,7 @@
 						class="form-input" id="medicineName" required>
 				</div>
 				<div class="form-group">
-					<label class="form-label">用法・用量</label> <input type="text"
+					<label class="form-label">用法・用量</label> <input type="number"
 						class="form-input" id="medicineDose" required>
 				</div>
 				<div class="form-group">
@@ -241,12 +315,10 @@
 				<div class="form-group">
 					<label class="form-label">服用指示</label> <select class="form-select"
 						id="dosing-instructions" required>
-						<option value="before-meals">食前</option>
-						<option value="after-meal">食後</option>
-						<option value="between-meals">食間</option>
-						<option value="before-bedtime">就寝前</option>
-						<option value="temporary-clothes">頓服</option>
-						<option value="fasting">空腹時</option>
+						<option value="BEFORE">食前</option>
+						<option value="AFTER">食後</option>
+						<option value="BETWEEN">食間</option>
+						<option value="ANYTIME">いつでも</option>
 					</select>
 				</div>
 				<div class="modal-actions">
@@ -404,9 +476,8 @@
 			<form id="careForm">
 				<div class="form-content">
 					<div class="modalabel-content">
-						<img src="/zuwaigani/image/work.png" alt="歩行介助" width="40" height="40" /> <label
-							class="label-text">歩行介助</label> <input type="checkbox"
-							name="care" value="歩行介助">
+						<img src="/zuwaigani/image/work.png" alt="歩行介助" width="40" height="40" /> <label class="label-text">歩行介助</label>
+							 <input type="checkbox" id="work" name="care" value="歩行介助">
 					</div>
 					<div class="modalabel-content">
 						<img src="/zuwaigani/image/eat.png" alt="食事介助" width="40" height="40" /> <label

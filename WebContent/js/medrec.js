@@ -1,5 +1,6 @@
 let medicineHistory = [];
 let editingScheduleItem = null;
+const userId = document.getElementById('userId').dataset.name;
 
 // 現在の日時を更新
 function updateDateTime() {
@@ -10,7 +11,8 @@ function updateDateTime() {
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
 
-            document.getElementById('datetime').innerHTML = `${year}.${month}.${day} ${hours}:${minutes}`;
+            document.querySelector('.date').innerHTML = `${year}.${month}.${day}`;
+            document.querySelector('.time').innerTEXT = ` ${hours}:${minutes}`;
         }
 
         // 1秒ごとに時刻を更新
@@ -128,23 +130,43 @@ function updateDateTime() {
             const name = document.getElementById('medicineName').value;
             const dose = document.getElementById('medicineDose').value;
             const time = document.getElementById('medicineTime').value;
+            const instructions = document.getElementById('dosing-instructions').value;
 
-            const medicineItem = document.createElement('div');
-            medicineItem.className = 'medicine-item';
-            medicineItem.innerHTML = `
-                <div class="medicine-info">
-                    <div class="medicine-name">${name}</div>
-                    <div class="medicine-dose">${dose}</div>
-                </div>
-                <div class="medicine-actions">
-                    <input type="checkbox" class="checkbox" onchange="markAsTaken(this, '${name}', '${time === 'morning' ? '朝' : time === 'noon' ? '昼' : '晩'}')">
-                    <button class="btn btn-small btn-danger" onclick="removeMedicine(this)">削除</button>
-                </div>
-            `;
+            fetch('/zuwaigani/addDrag',{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					userId: userId,
+					instructions: instructions,
+					dose: dose,
+					name: name,
+					time: time
+				})
+			}).then(response => response.json()).then(data => {
+				const medicineItem = document.createElement('div');
+				medicineItem.className = 'medicine-item';
+				medicineItem.innerHTML = `
+					<div class="medicine-info">
+					<div class="medicine-name">${name}</div>
+					<div class="medicine-dose">${ dose }錠/${ data.instructions }</div>
+					</div>
+					<div class="medicine-actions">
+					<input type="checkbox" class="checkbox" onchange="markAsTaken(this, '${name}', '${time === 'morning' ? '朝' : time === 'noon' ? '昼' : '晩'}')">
+					<button class="btn btn-small btn-danger" onclick="removeMedicine(this)">削除</button>
+					</div>
+					`;
 
-            document.getElementById(time).appendChild(medicineItem);
-            closeModal('addMedicineModal');
-            this.reset();
+
+				document.getElementById(time).appendChild(medicineItem);
+				closeModal('addMedicineModal');
+				this.reset();
+				console.log(data);
+			}).catch(error => {
+				console.error('エラー',error);
+			})
+
         });
 
         // スケジュール追加/編集フォーム送信
@@ -252,22 +274,32 @@ function updateDateTime() {
         // 申し送り事項追加
         function addHandover(content) {
             // TODO: ここでサーブレットにPOSTリクエストを送信
-            fetch('HandoverServlet', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'action=add&content=' + encodeURIComponent(content)
+            fetch('/zuwaigani/AddHando', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					userId: userId,
+					content: content
+				})
             })
             .then(response => response.json())
             .then(data => {
-                if (data.success) {
+
                     alert('申し送り事項を追加しました。');
                     closeAddModal();
-                    loadLatestHandover(); // 最新の申し送り事項を再読み込み
-                } else {
-                    alert('エラーが発生しました: ' + data.message);
-                }
+                     // 最新の申し送り事項を再読み込み
+                    const html = `
+		                        <div class="handover-meta">
+		                        	・${ content }
+		                        </div>
+                    `
+                    const tmpElm = document.createElement('div');
+                    tmpElm.innerHTML = html;
+                    tmpElm.classList.add('handover-item');
+                    document.querySelector('.handover-list').appendChild(tmpElm);
+
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -276,7 +308,7 @@ function updateDateTime() {
         }
 
         // 最新の申し送り事項読み込み
-        function loadLatestHandover() {
+        function loadLatestHandover(content) {
             fetch('HandoverServlet?action=latest')
             .then(response => response.json())
             .then(data => {
@@ -341,9 +373,9 @@ function updateDateTime() {
         }
 
         // ページ読み込み時に最新の申し送り事項を取得
-        document.addEventListener('DOMContentLoaded', function() {
-            loadLatestHandover();
-        });
+//        document.addEventListener('DOMContentLoaded', function() {
+//            loadLatestHandover();
+//        });
 
         // 病歴モーダル
         function closehistoryModal(id) {
