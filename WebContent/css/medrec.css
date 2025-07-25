@@ -518,10 +518,8 @@ body {
 
 .handover-content {
 	font-size: 10px;
-	font-weight: bold;
-	color: #ff7a3d;
-	display: flex;
-	flex: 1;
+  font-weight: bold;
+  color: #ff7a3d;
 }
 
 .handover-detail {
