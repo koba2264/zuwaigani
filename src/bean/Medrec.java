@@ -26,7 +26,7 @@ public class Medrec implements Serializable {
 //	病歴リスト
 	private List<Medhis> medhisList = new ArrayList<>();
 //	スケジュール
-	private List<Schedule> Schedules = new ArrayList<>();
+	private List<Schedule> schedules = new ArrayList<>();
 //	朝の薬
 	private List<Drag> morningDrag = new ArrayList<>();
 //	昼の薬
@@ -66,7 +66,7 @@ public class Medrec implements Serializable {
 		return medhisList;
 	}
 	public List<Schedule> getSchedules() {
-		return Schedules;
+		return schedules;
 	}
 	public List<Drag> getMorningDrag() {
 		return morningDrag;
@@ -120,10 +120,10 @@ public class Medrec implements Serializable {
 		this.medhisList.add(medhis);
 	}
 	public void setSchedules(List<Schedule> schedules) {
-		Schedules = schedules;
+		this.schedules = schedules;
 	}
 	public void setSchedule(Schedule schedule) {
-		Schedules.add(schedule);
+		schedules.add(schedule);
 	}
 	public void setMorningDrag(List<Drag> morningDrag) {
 		this.morningDrag = morningDrag;
