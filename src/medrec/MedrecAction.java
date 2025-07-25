@@ -11,7 +11,6 @@ public class MedrecAction extends Action {
     	String id = request.getParameter("id");
     	MedrecDAO dao = new MedrecDAO();
     	Medrec medrec = dao.getMedrec(id);
-    	System.out.println(medrec.getMorningDrag().size());
     	request.setAttribute("medrec", medrec);
 
     	return "/WEB-INF/medrec/index.jsp";
