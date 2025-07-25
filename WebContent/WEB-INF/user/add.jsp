@@ -88,9 +88,10 @@
 		<input id="DAYSERVICE" type="radio" name="section" value="DAYSERVICE">
 		<label for="DAYSERVICE">デイサービス</label>
 	</div>
-	<div>
-		<input type="submit" value="確定">
-	</div>
+	 <div class="button-container">
+           <input type="submit" value="確定">
+             <button onclick="location.href='/zuwaigani/menu.jsp'" class="btn">メニューへ</button>
+        </div>
 </form>
 
 </body>

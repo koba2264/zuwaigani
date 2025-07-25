@@ -10,59 +10,60 @@
 <body>
 <h1>利用者情報追加確認</h1>
 <form action="Useraddcomp.action" method="post">
-
 <h3>こちらの内容でよろしいですか？</h3>
 <table border="1" class="user-addcheck">
 	<tr>
+		<td>ID</td>
+		<td>${user.id}</td>
+	</tr>
+	<tr>
 		<td>名前</td>
-		<td>大原</td>
+		<td>${user.name}</td>
 	</tr>
 	<tr>
 		<td>フリガナ</td>
-		<td>オオハラ</td>
+		<td>${user.namef}</td>
 	</tr>
 	<tr>
 		<td>性別</td>
-		<td>男</td>
+		<td>${user.gender == 'MALE' ? '男' : user.gender == 'FEMALE' ? '女' : '無回答'}</td>
 	</tr>
 	<tr>
 		<td>血液型</td>
-		<td>A</td>
+		<td>${user.blood}型</td>
 	</tr>
 	<tr>
 		<td>生年月日</td>
-		<td>2026/07/03</td>
+		<td>${user.birthDay}</td>
 	</tr>
 	<tr>
 		<td>電話番号</td>
-		<td>000-0000-0000</td>
+		<td>${user.number}</td>
 	</tr>
 	<tr>
 		<td>住所</td>
-		<td>広島市中区東平塚町3-30</td>
+		<td>${user.address}</td>
 	</tr>
 	<tr>
 		<td>非常時連絡先１</td>
-		<td>000-0000-0000</td>
+		<td>${user.sos1}</td>
 	</tr>
 	<tr>
 		<td>非常時連絡先２</td>
-		<td></td>
+		<td>${user.sos2}</td>
 	</tr>
 	<tr>
 		<td>配偶者の有無</td>
-		<td>有</td>
+		<td>${user.spouse ? '有' : '無'}</td>
 	</tr>
 	<tr>
 		<td>区分</td>
-		<td>入居</td>
+		<td>${user.section == 'MOVEIN' ? '入居' : 'デイサービス'}</td>
 	</tr>
 </table>
-
-<div>
-	<input type="submit" name="action" value="戻る">
-	<input type="submit" name="action" value="追加">
-</div>
-
+<div class="button-container">
+           <button onclick="location.href='/zuwaigani/menu.jsp'" class="btn">メニューへ</button>
+           <input type="submit" name="action" value="追加">
+        </div>
 </body>
 </html>

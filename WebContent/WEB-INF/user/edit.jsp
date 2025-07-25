@@ -34,7 +34,7 @@
 	</div>
 	<div>
 		<label>血液型</label>
-		<p>${ user.bloodType }型</p>
+		<p>${ user.blood }型</p>
 	</div>
 	<div>
 		<label for="birthday">生年月日</label>
