@@ -28,7 +28,7 @@ h1 {
 }
 
 form {
-    max-width: 600px;
+    width: 650px;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 30px;
@@ -159,5 +159,37 @@ form > div:last-child {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 0;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.btn {
+	background: linear-gradient(135deg, #FF8B4E 0%, #FF6B35 100%);
+	color: white;
+	border: none;
+	border-radius: 25px;
+	padding: 15px 40px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	display: inline-block;
+	box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+	background: linear-gradient(135deg, #FF9B5E 0%, #FF7B45 100%);
+}
+
+.btn:active {
+	transform: translateY(0);
 }
 

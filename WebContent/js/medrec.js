@@ -507,7 +507,9 @@ function updateDateTime() {
         	});
 
 //介助レベル
-
+        function closelevelModal() {
+            document.getElementById('levelModal').style.display = 'none';
+        }
 
           function showAddlevelModal() {
           	  const modal = document.getElementById('addlevelModal');
@@ -524,6 +526,18 @@ function updateDateTime() {
           // モーダルを開く
           showAddlevelModalBtn.addEventListener('click', () => {
             addlevelModal.style.display = 'block';
+          });
+          
+       // モーダルを閉じる
+          closelevelModalBtn.addEventListener('click', () => {
+            addlevelModal.style.display = 'none';
+          });
+
+          // モーダル外をクリックして閉じる
+          window.addEventListener('click', (e) => {
+            if (e.target === addlevelModal) {
+              addlevelModal.style.display = 'none';
+            }
           });
 
 

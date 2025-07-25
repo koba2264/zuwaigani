@@ -517,9 +517,10 @@ body {
 }
 
 .handover-content {
-	font-size: 16px;
+	font-size: 10px;
 	font-weight: bold;
 	color: #ff7a3d;
+	display: flex;
 	flex: 1;
 }
 

@@ -35,7 +35,7 @@ public class UserDAO extends DAO {
 			user.setEnrollment(rs.getBoolean("ENROLLMENT"));
 			user.setSection(Section.valueOf(rs.getString("SECTION")));
 			user.setDay(rs.getObject("DAY", LocalDate.class));
-			user.setBloodType(rs.getString("BLOOD"));
+			user.setBlood(rs.getString("BLOOD"));
 			userList.add(user);
 		}
 
@@ -67,7 +67,7 @@ public class UserDAO extends DAO {
 			user.setEnrollment(rs.getBoolean("ENROLLMENT"));
 			user.setSection(Section.valueOf(rs.getString("SECTION")));
 			user.setDay(rs.getObject("DAY", LocalDate.class));
-			user.setBloodType(rs.getString("BLOOD"));
+			user.setBlood(rs.getString("BLOOD"));
 		}
 
 		ps.close();
